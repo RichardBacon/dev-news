@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../../utils/api';
 import styles from './CommentList.module.css';
 import Comment from '../Comment/Comment';
+import CommentAdder from '../CommentAdder/CommentAdder';
 import Loader from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination';
 
@@ -21,6 +22,12 @@ class CommentList extends Component {
 
     return (
       <section>
+        <CommentAdder
+          post_id={post_id}
+          username={username}
+          addCommentToState={this.addCommentToState}
+        />
+
         <h2 className={styles.title}>Comments</h2>
 
         <ul>
