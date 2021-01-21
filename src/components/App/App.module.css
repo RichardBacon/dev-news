@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  color: inherit;
+  font: inherit;
+}
+
+*:focus {
+  outline-color: var(--color-secondary);
+}
+
+::selection {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 50%;
+  scroll-behavior: smooth;
+}
+
+/* > 600px */
+@media only screen and (min-width: 37.5em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/* > 900px */
+@media only screen and (min-width: 56.25em) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-gray);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+select {
+  font-size: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 36rem;
+  min-height: 100vh;
+}
+
+/* > 600px */
+@media only screen and (min-width: 37.5em) {
+  .container {
+    margin: 0 auto;
+    max-width: 54rem;
+  }
+}
+
+/* > 900px */
+@media only screen and (min-width: 56.25em) {
+  .container {
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+}
