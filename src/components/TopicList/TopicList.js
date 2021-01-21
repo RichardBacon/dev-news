@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../../utils/api';
 import styles from './TopicList.module.css';
+import TopicCard from '../TopicCard/TopicCard';
 import Loader from '../Loader/Loader';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 
@@ -26,7 +27,7 @@ class TopicList extends Component {
 
             return (
               <li key={title}>
-                <p>{topic.title}</p>
+                <TopicCard {...topic} />
               </li>
             );
           })}
