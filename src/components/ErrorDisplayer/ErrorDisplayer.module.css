@@ -1,0 +1,8 @@
+.errorDisplayer {
+  color: var(--color-danger);
+  font-size: 2rem;
+}
+
+.img {
+  width: 100%;
+}

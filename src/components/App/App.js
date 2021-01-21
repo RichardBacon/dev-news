@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Nav from '../Nav/Nav';
+import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 
 class App extends Component {
   state = {
@@ -20,7 +21,9 @@ class App extends Component {
         <Header {...user} />
         <div className={styles.container}>
           <Nav />
-          <Router></Router>
+          <Router>
+            <ErrorDisplayer default />
+          </Router>
         </div>
         <Footer />
       </>
