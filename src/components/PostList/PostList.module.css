@@ -1,0 +1,27 @@
+.sortingForm {
+  margin: 2rem 0;
+}
+
+.sortBy,
+.order {
+  border: 2px solid var(--color-primary);
+  border-radius: 0.5rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  margin-right: 2rem;
+  padding: 0.5rem 1rem;
+  width: 16rem;
+}
+
+.sortBy:hover,
+.order:hover {
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.title {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}

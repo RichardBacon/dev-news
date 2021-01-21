@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Nav from '../Nav/Nav';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
+import PostList from '../PostList/PostList';
 
 class App extends Component {
   state = {
@@ -22,6 +23,9 @@ class App extends Component {
         <div className={styles.container}>
           <Nav />
           <Router>
+            <PostList path="/" />
+            <PostList path="/posts" />
+            <PostList path="/topics/:topic" />
             <ErrorDisplayer default />
           </Router>
         </div>
