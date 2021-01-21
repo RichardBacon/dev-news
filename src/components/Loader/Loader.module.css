@@ -1,0 +1,19 @@
+.loader {
+  animation: spin 2s linear infinite;
+  border: 2rem solid var(--color-gray-light);
+  border-radius: 50%;
+  border-top: 2rem solid var(--color-primary);
+  height: 16rem;
+  margin: 0 auto;
+  width: 16rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
