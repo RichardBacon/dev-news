@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './PostList.module.css';
 import * as api from '../../utils/api';
+import PostCard from '../PostCard/PostCard';
 import Loader from '../Loader/Loader';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 
@@ -55,24 +56,11 @@ class PostList extends Component {
         <h2 className={styles.title}>Posts</h2>
         <ul>
           {posts.map((post) => {
-            const {
-              post_id,
-              topic,
-              title,
-              created_by,
-              created_at,
-              votes,
-              comment_count,
-            } = post;
+            const { post_id } = post;
 
             return (
               <li key={post_id}>
-                <p>{topic}</p>
-                <p>{title}</p>
-                <p>{created_by}</p>
-                <p>{created_at}</p>
-                <p>{votes}</p>
-                <p>{comment_count}</p>
+                <PostCard {...post} />
               </li>
             );
           })}
