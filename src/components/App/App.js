@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
 import Header from '../Header/Header';
+import Nav from '../Nav/Nav';
 
 class App extends Component {
   state = {
@@ -15,7 +16,9 @@ class App extends Component {
     return (
       <>
         <Header {...user} />
-        <div className={styles.container}>App</div>
+        <div className={styles.container}>
+          <Nav />
+        </div>
       </>
     );
   }
