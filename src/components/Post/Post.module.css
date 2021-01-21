@@ -1,0 +1,11 @@
+.post {
+  border: 2px solid var(--color-primary);
+  border-radius: 0.5rem;
+  margin: 4rem 0;
+  padding: 1rem 2rem;
+}
+
+.title {
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+}

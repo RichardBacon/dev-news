@@ -7,7 +7,7 @@ import Nav from '../Nav/Nav';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 import PostList from '../PostList/PostList';
 import TopicList from '../TopicList/TopicList';
-
+import Post from '../Post/Post';
 class App extends Component {
   state = {
     user: {
@@ -28,6 +28,7 @@ class App extends Component {
             <PostList path="/posts" />
             <PostList path="/topics/:topic" />
             <TopicList path="/topics" />
+            <Post path="/posts/:post_id" username={user.username} />
             <ErrorDisplayer default />
           </Router>
         </div>
