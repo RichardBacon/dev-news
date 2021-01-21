@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../../utils/api';
 import styles from './Post.module.css';
+import CommentList from '../CommentList/CommentList';
 import Loader from '../Loader/Loader';
 import VoteUpdater from '../VoteUpdater/VoteUpdater';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
@@ -41,6 +42,11 @@ class Post extends Component {
           <p>comments: {comment_count}</p>
           <VoteUpdater post_id={post_id} votes={votes} />
         </article>
+        <CommentList
+          updateCommentCount={this.updateCommentCount}
+          post_id={post_id}
+          username={username}
+        />
       </main>
     );
   }
