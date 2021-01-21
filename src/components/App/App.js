@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Router } from '@reach/router';
 import styles from './App.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -19,6 +20,7 @@ class App extends Component {
         <Header {...user} />
         <div className={styles.container}>
           <Nav />
+          <Router></Router>
         </div>
         <Footer />
       </>
