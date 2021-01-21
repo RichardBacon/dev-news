@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../../utils/api';
 import styles from './Post.module.css';
 import Loader from '../Loader/Loader';
+import VoteUpdater from '../VoteUpdater/VoteUpdater';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 
 class Post extends Component {
@@ -38,6 +39,7 @@ class Post extends Component {
           <p>{body}</p>
           <p>posted: {new Date(created_at).toLocaleString()}</p>
           <p>comments: {comment_count}</p>
+          <VoteUpdater post_id={post_id} votes={votes} />
         </article>
       </main>
     );

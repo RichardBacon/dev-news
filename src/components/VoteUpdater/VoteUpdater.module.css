@@ -1,0 +1,32 @@
+.btns {
+  margin-top: 1rem;
+}
+
+.upBtn,
+.downBtn {
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 3.6rem;
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.upBtn:hover,
+.downBtn:hover {
+  color: var(--color-secondary);
+}
+
+.upBtn:disabled,
+.downBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.upIcon,
+.downIcon {
+  display: block;
+  margin: 0 auto;
+}
