@@ -4,6 +4,7 @@ import * as api from '../../utils/api';
 import PostCard from '../PostCard/PostCard';
 import Loader from '../Loader/Loader';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
+import Pagination from '../Pagination/Pagination';
 
 class PostList extends Component {
   state = {
@@ -17,7 +18,7 @@ class PostList extends Component {
   };
 
   render() {
-    const { posts, isLoading, sort_by, order, err } = this.state;
+    const { posts, isLoading, sort_by, order, err, page, maxPage } = this.state;
 
     if (isLoading) return <Loader />;
     if (err) return <ErrorDisplayer {...err} />;
@@ -65,6 +66,12 @@ class PostList extends Component {
             );
           })}
         </ul>
+
+        <Pagination
+          page={page}
+          maxPage={maxPage}
+          handlePageChange={this.handlePageChange}
+        />
       </main>
     );
   }
