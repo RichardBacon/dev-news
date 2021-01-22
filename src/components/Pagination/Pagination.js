@@ -19,7 +19,7 @@ const Pagination = (props) => {
       <button
         className={styles.btn}
         onClick={() => handlePageChange(1)}
-        disabled={page === maxPage}
+        disabled={page >= maxPage}
         aria-label="next page"
       >
         <FontAwesomeIcon className="right-icon" icon="arrow-circle-right" />
