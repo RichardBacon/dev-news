@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import { Helmet } from 'react-helmet';
+import OnRouteChange from 'reach-router-scroll-top';
 import styles from './App.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -38,6 +39,7 @@ class App extends Component {
             <Post path="/posts/:post_id" username={user.username} />
             <ErrorDisplayer default />
           </Router>
+          <OnRouteChange />
         </div>
         <Footer />
       </>
