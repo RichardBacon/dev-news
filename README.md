@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Dev News
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Dev News](https://dev-news-frontend.netlify.app/)
 
-## Available Scripts
+A mock news and discussion site for developers.
 
-In the project directory, you can run:
+This repo is the frontend web app. The backend API and database the fan be found here: [Dev News API](https://github.com/RichardJonBacon/dev-news-api).
 
-### `npm start`
+Users are able to view posts and comments, sort posts, vote posts and comments up and down, add comments, and delete comments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The user is logged in as a default username.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+From the home page the user can view all posts, or choose to view posts by a particular topic.
 
-### `npm test`
+Posts can be sorted by date posted, number of comments, and number of votes, and can be ordered in descending or ascending order.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Individual posts can be viewed along with their comments. Posts and comments can be voted up or down, and comments can be both added and deleted.
 
-### `npm run build`
+Posts and comments are paginated and default to a maximum of 10 per page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/RichardJonBacon/dev-news.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+```
+node v12
+npm v7
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd dev-news
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Starting The Dev Server
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm start
+```
 
-## Learn More
+## Building A Production Version
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Built With
 
-### Code Splitting
+- [React](https://reactjs.org/)
+- [Create React App](https://create-react-app.dev/)
+- [Reach Router](https://reach.tech/router)
+- [Axios](https://github.com/axios/axios)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Authors
 
-### Analyzing the Bundle Size
+- **Richard Bacon** - [RichardJonBacon](https://github.com/RichardJonBacon)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
