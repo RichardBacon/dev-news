@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
+import { Helmet } from 'react-helmet';
 import styles from './App.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -20,6 +21,12 @@ class App extends Component {
 
     return (
       <>
+        <Helmet>
+          <html lang="en" />
+          <title>Dev News</title>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Helmet>
         <Header {...user} />
         <div className={styles.container}>
           <Nav />
