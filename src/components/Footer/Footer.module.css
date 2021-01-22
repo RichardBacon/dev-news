@@ -1,26 +1,10 @@
 .footer {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 4rem 0;
+  padding: var(--size-4) 0;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 36rem;
-}
-
-/* > 600px */
-@media only screen and (min-width: 37.5em) {
-  .container {
-    margin: 0 auto;
-    max-width: 54rem;
-  }
-}
-
-/* > 900px */
-@media only screen and (min-width: 56.25em) {
-  .container {
-    margin: 0 auto;
-    max-width: 80rem;
-  }
+  max-width: var(--max-width);
 }

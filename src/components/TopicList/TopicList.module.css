@@ -1,6 +1,6 @@
 .title {
   color: var(--color-primary);
-  font-size: 2rem;
+  font-size: var(--size-2);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: var(--size-1);
 }

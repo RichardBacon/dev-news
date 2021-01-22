@@ -1,5 +1,5 @@
 .btns {
-  margin-top: 1rem;
+  margin-top: var(--size-1);
 }
 
 .upBtn,
@@ -9,9 +9,9 @@
   border-radius: 50%;
   color: var(--color-primary);
   cursor: pointer;
-  font-size: 3.6rem;
-  height: 4.5rem;
-  width: 4.5rem;
+  font-size: var(--font-size-3);
+  height: var(--size-4);
+  width: var(--size-4);
 }
 
 .upBtn:hover,

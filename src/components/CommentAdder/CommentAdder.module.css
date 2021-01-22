@@ -1,32 +1,32 @@
 .commentAdder {
-  margin-bottom: 4rem;
+  margin-bottom: var(--size-4);
 }
 
 .commentText {
-  border: 2px solid var(--color-primary);
-  border-radius: 0.5rem;
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
   height: 20rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--size-1);
   min-width: 100%;
-  padding: 1rem;
+  padding: var(--size-1);
   resize: none;
 }
 
 .commentText:focus {
-  border: 2px solid var(--color-secondary);
+  border: var(--border-secondary);
 }
 
 .commentBtn {
   background-color: var(--color-white);
-  border: 2px solid var(--color-primary);
-  border-radius: 0.5rem;
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
   color: var(--color-primary);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: var(--size-0);
 }
 
 .commentBtn:hover,
 .commentBtn:focus {
-  border: 2px solid var(--color-secondary);
+  border: var(--border-secondary);
   color: var(--color-secondary);
 }

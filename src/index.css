@@ -2,6 +2,22 @@
 @import-sanitize;
 
 :root {
+  /* Sizing */
+  --size-0: 0.4rem;
+  --size-1: 1.6rem;
+  --size-2: 2.262rem;
+  --size-3: 3.199rem;
+  --size-4: 4.523rem;
+  --size-5: 6.396rem;
+  --size-6: 9.044rem;
+  --size-7: 12.788rem;
+  --size-8: 18.083rem;
+
+  /* Layout */
+  --max-width: 98rem;
+  --header-height: 8rem;
+  --footer-height: 8rem;
+
   /* Colors */
   --color-white: #fdfdff;
   --color-gray: #535657;
@@ -9,4 +25,75 @@
   --color-primary: #95625f;
   --color-secondary: #326886;
   --color-danger: #d61f1f;
+
+  /* Fonts */
+  --font-primary: verdana, geneva, tahoma, sans-serif;
+  --font-secondary: poppins, sans-serif;
+  --font-weight: 400;
+  --line-height: 1.6;
+  --font-size-1: 1.6rem;
+  --font-size-2: 2.262rem;
+  --font-size-3: 3.199rem;
+  --font-size-4: 4.523rem;
+  --font-size-5: 6.396rem;
+  --font-size-6: 9.044rem;
+
+  /* Borders */
+  --border-primary: 2px solid var(--color-primary);
+  --border-secondary: 2px solid var(--color-secondary);
+  --border-radius: var(--size-0);
+
+  @media only screen and (max-width: 56.25em) {
+    :root {
+      /* Sizing */
+      --size-0: 0.4rem;
+      --size-1: 1.6rem;
+      --size-2: 2.133rem;
+      --size-3: 2.843rem;
+      --size-4: 3.79rem;
+      --size-5: 5.052rem;
+      --size-6: 6.734rem;
+      --size-7: 8.976rem;
+      --size-8: 11.966rem;
+
+      /* Layout */
+      --max-width: 60rem;
+
+      /* Fonts */
+      --font-size-0: 0.4rem;
+      --font-size-1: 1.6rem;
+      --font-size-2: 2.133rem;
+      --font-size-3: 2.843rem;
+      --font-size-4: 3.79rem;
+      --font-size-5: 5.052rem;
+      --font-size-6: 6.734rem;
+    }
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    :root {
+      /* Sizing */
+      --size-0: 0.4rem;
+      --size-1: 1.6rem;
+      --size-2: var(--size-2);
+      --size-3: 2.5rem;
+      --size-4: 3.125rem;
+      --size-5: 3.906rem;
+      --size-6: 4.883rem;
+      --size-7: 6.104rem;
+      --size-8: 7.629rem;
+
+      /* Layout */
+      --max-width: 40rem;
+
+      /* Fonts */
+      --font-size-0: 0.4rem;
+      --font-size-1: 1.6rem;
+      --font-size-2: var(--size-2);
+      --font-size-3: 2.5rem;
+      --font-size-4: 3.125rem;
+      --font-size-5: 3.906rem;
+      --font-size-6: 4.883rem;
+    }
+  }
 }

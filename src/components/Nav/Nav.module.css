@@ -1,11 +1,11 @@
 .nav {
-  padding: 1rem 0;
+  padding: var(--size-1) 0;
 }
 
 @media only screen and (min-width: 56.25em) {
   .nav {
     background-color: var(--color-primary);
-    margin-right: 4rem;
+    margin-right: var(--size-4);
     min-width: 20rem;
     padding: 0;
   }
@@ -27,8 +27,8 @@
   border: none;
   color: var(--color-white);
   cursor: pointer;
-  font-size: 2rem;
-  padding: 2rem;
+  font-size: var(--size-2);
+  padding: var(--size-2);
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -42,8 +42,8 @@
   border: none;
   color: var(--color-white);
   display: none;
-  font-size: 2rem;
-  padding: 2rem;
+  font-size: var(--size-2);
+  padding: var(--size-2);
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -76,7 +76,7 @@
 .link {
   color: var(--color-primary);
   display: block;
-  padding: 2rem 4rem;
+  padding: var(--size-2) var(--size-4);
   text-decoration: none;
 }
 

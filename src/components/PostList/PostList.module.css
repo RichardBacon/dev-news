@@ -1,27 +1,27 @@
 .sortingForm {
-  margin: 2rem 0;
+  margin: var(--size-2) 0;
 }
 
 .sortBy,
 .order {
-  border: 2px solid var(--color-primary);
-  border-radius: 0.5rem;
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
   color: var(--color-primary);
   cursor: pointer;
-  margin-right: 2rem;
-  padding: 0.5rem 1rem;
+  margin-right: var(--size-2);
+  padding: var(--size-0) var(--size-1);
   width: 16rem;
 }
 
 .sortBy:hover,
 .order:hover {
-  border: 2px solid var(--color-secondary);
+  border: var(--border-secondary);
   color: var(--color-secondary);
 }
 
 .title {
   color: var(--color-primary);
-  font-size: 2rem;
+  font-size: var(--size-2);
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: var(--size-1);
 }

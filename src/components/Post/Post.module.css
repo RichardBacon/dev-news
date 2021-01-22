@@ -1,11 +1,11 @@
 .post {
-  border: 2px solid var(--color-primary);
-  border-radius: 0.5rem;
-  margin: 4rem 0;
-  padding: 1rem 2rem;
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
+  margin: var(--size-4) 0;
+  padding: var(--size-1) var(--size-2);
 }
 
 .title {
   color: var(--color-primary);
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--size-1);
 }

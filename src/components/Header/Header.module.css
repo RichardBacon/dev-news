@@ -1,7 +1,7 @@
 .header {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 1rem 0;
+  padding: var(--size-1) 0;
 }
 
 .container {
@@ -9,34 +9,18 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 36rem;
-}
-
-/* > 600px */
-@media only screen and (min-width: 37.5em) {
-  .container {
-    margin: 0 auto;
-    max-width: 54rem;
-  }
-}
-
-/* > 900px */
-@media only screen and (min-width: 56.25em) {
-  .container {
-    margin: 0 auto;
-    max-width: 80rem;
-  }
+  max-width: var(--max-width);
 }
 
 .logo {
   font-size: 4.8rem;
-  margin: 1rem;
+  margin: var(--size-1);
 }
 
 .title {
-  font-size: 2.4rem;
+  font-size: var(--font-size-3);
 }
 
 .username {
-  font-size: 1.2rem;
+  font-size: var(--font-size-1);
 }
