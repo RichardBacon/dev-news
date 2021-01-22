@@ -12,7 +12,7 @@ const Header = (props) => {
         <Link to="/" aria-label="home">
           <FontAwesomeIcon className={styles.logo} icon="newspaper" />
         </Link>
-        <h1 className={styles.title}>NC News</h1>
+        <h1 className={styles.title}>Dev News</h1>
         <p className={styles.username}>{username}</p>
       </div>
     </header>
