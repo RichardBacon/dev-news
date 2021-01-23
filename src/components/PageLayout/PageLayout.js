@@ -15,7 +15,7 @@ const PageLayout = ({ user }) => {
     <>
       <Header {...user} />
       <div className={styles.container}>
-        <SideNav />
+        <SideNav className={styles.SideNav} />
         <Router>
           <PostList path="/" />
           <PostList path="/posts" />

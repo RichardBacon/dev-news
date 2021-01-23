@@ -1,6 +1,7 @@
 .container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  gap: var(--size-2);
+  grid-template-columns: 20rem auto;
   margin: 0 auto;
   max-width: var(--max-width);
   min-height: 100vh;
