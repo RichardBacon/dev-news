@@ -9,7 +9,7 @@
   background-color: var(--color-white);
   border: none;
   border-radius: 50%;
-  color: var(--color-primary);
+  color: var(--color-1);
   cursor: pointer;
   font-size: var(--font-size-3);
   height: var(--size-4);
@@ -17,7 +17,7 @@
 }
 
 .btn:hover {
-  color: var(--color-secondary);
+  color: var(--color-2);
 }
 
 .btn:disabled {

@@ -1,5 +1,5 @@
 .nav {
-  background-color: var(--color-primary);
+  background-color: var(--color-1);
   flex: 0 0 25%;
   margin-right: var(--size-4);
   min-width: 20rem;
@@ -16,7 +16,7 @@
 }
 
 .link {
-  color: var(--color-white);
+  color: var(--color-3);
   display: block;
   padding: var(--size-1) var(--size-4);
   text-decoration: none;
@@ -24,9 +24,9 @@
 }
 
 .listItem:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-3);
 }
 
 .listItem:hover .link {
-  color: var(--color-secondary);
+  color: var(--color-2);
 }

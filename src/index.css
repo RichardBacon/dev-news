@@ -16,11 +16,11 @@
   --footer-height: 8rem;
 
   /* Colors */
-  --color-white: #fdfdff;
-  --color-gray: #535657;
-  --color-gray-light: #e0e0e0;
-  --color-primary: #95625f;
-  --color-secondary: #326886;
+  --color-white: #fff;
+  --color-1: #08090a;
+  --color-2: #323ebe;
+  --color-3: #eef0f1;
+  --color-4: #d2d6db;
   --color-danger: #d61f1f;
 
   /* Fonts */
@@ -36,7 +36,7 @@
   --font-size-6: 9.044rem;
 
   /* Borders */
-  --border-primary: 2px solid var(--color-primary);
-  --border-secondary: 2px solid var(--color-secondary);
+  --border-primary: 2px solid var(--color-1);
+  --border-secondary: 2px solid var(--color-2);
   --border-radius: var(--size-0);
 }

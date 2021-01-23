@@ -20,7 +20,7 @@
   background-color: var(--color-white);
   border: var(--border-primary);
   border-radius: var(--border-radius);
-  color: var(--color-primary);
+  color: var(--color-1);
   cursor: pointer;
   padding: var(--size-0);
 }
@@ -28,5 +28,5 @@
 .commentBtn:hover,
 .commentBtn:focus {
   border: var(--border-secondary);
-  color: var(--color-secondary);
+  color: var(--color-2);
 }

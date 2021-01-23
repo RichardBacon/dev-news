@@ -6,7 +6,7 @@
 .order {
   border: var(--border-primary);
   border-radius: var(--border-radius);
-  color: var(--color-primary);
+  color: var(--color-1);
   cursor: pointer;
   margin-right: var(--size-2);
   padding: var(--size-0) var(--size-1);
@@ -16,11 +16,11 @@
 .sortBy:hover,
 .order:hover {
   border: var(--border-secondary);
-  color: var(--color-secondary);
+  color: var(--color-2);
 }
 
 .title {
-  color: var(--color-primary);
+  color: var(--color-1);
   font-size: var(--size-2);
   font-weight: 600;
   margin-bottom: var(--size-1);

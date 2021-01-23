@@ -12,11 +12,11 @@
 }
 
 *:focus {
-  outline-color: var(--color-secondary);
+  outline-color: var(--color-2);
 }
 
 ::selection {
-  background-color: var(--color-secondary);
+  background-color: var(--color-2);
   color: var(--color-white);
 }
 
@@ -41,8 +41,8 @@ html {
 }
 
 body {
-  background-color: var(--color-white);
-  color: var(--color-gray);
+  background-color: var(--color-3);
+  color: var(--color-1);
   font-family: var(--font-primary);
   font-size: var(--font-size-1);
   font-weight: var(--font-weight);

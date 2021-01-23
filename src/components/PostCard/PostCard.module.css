@@ -10,14 +10,14 @@
 }
 
 .link {
-  color: var(--color-primary);
+  color: var(--color-1);
   text-decoration: none;
 }
 
 .link:hover {
-  color: var(--color-secondary);
+  color: var(--color-2);
 }
 
 .link:active {
-  color: var(--color-gray);
+  color: var(--color-1);
 }
