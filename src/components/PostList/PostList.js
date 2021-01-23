@@ -19,9 +19,12 @@ class PostList extends Component {
 
   render() {
     const { posts, isLoading, sort_by, order, err, page, maxPage } = this.state;
+    const { topic } = this.props;
 
     if (isLoading) return <Loader />;
     if (err) return <ErrorDisplayer {...err} />;
+
+    const heading = `Posts: ${topic || 'All'}`;
 
     return (
       <main>
@@ -54,7 +57,7 @@ class PostList extends Component {
           </label>
         </form>
 
-        <h2 className={styles.title}>Posts</h2>
+        <h2 className={styles.title}>{heading}</h2>
         <ul>
           {posts.map((post) => {
             const { post_id } = post;
