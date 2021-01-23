@@ -1,0 +1,32 @@
+.nav {
+  background-color: var(--color-primary);
+  flex: 0 0 25%;
+  margin-right: var(--size-4);
+  min-width: 20rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  cursor: pointer;
+  margin: 0 var(--size-3);
+}
+
+.link {
+  color: var(--color-white);
+  display: block;
+  padding: var(--size-1) var(--size-4);
+  text-decoration: none;
+  width: 100%;
+}
+
+.listItem:hover {
+  background-color: var(--color-white);
+}
+
+.listItem:hover .link {
+  color: var(--color-secondary);
+}
