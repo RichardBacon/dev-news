@@ -58,18 +58,3 @@ input,
 select {
   font-size: 100%;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: var(--max-width);
-  min-height: 100vh;
-}
-
-/* > 900px */
-@media only screen and (min-width: 56.25em) {
-  .container {
-    flex-direction: row;
-  }
-}
