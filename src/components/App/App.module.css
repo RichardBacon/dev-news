@@ -43,7 +43,7 @@ html {
 body {
   background-color: var(--color-3);
   color: var(--color-1);
-  font-family: var(--font-primary);
+  font-family: var(--font-family);
   font-size: var(--font-size-1);
   font-weight: var(--font-weight);
   line-height: var(--line-height);

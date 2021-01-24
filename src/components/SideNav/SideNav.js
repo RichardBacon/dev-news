@@ -8,12 +8,12 @@ const SideNav = () => {
       <ul className={styles.list}>
         <li className={styles.listItem}>
           <Link className={styles.link} to="/">
-            Home
+            🏠 Home
           </Link>
         </li>
         <li className={styles.listItem}>
           <Link className={styles.link} to="/topics">
-            Topics
+            🏷 Topics
           </Link>
         </li>
       </ul>

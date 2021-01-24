@@ -11,8 +11,8 @@
   --size-8: 18.083rem;
 
   /* Layout */
-  --max-width: 98rem;
-  --header-height: 8rem;
+  --max-width: 128rem;
+  --header-height: 6rem;
   --footer-height: 8rem;
 
   /* Colors */
@@ -24,8 +24,7 @@
   --color-danger: #d61f1f;
 
   /* Fonts */
-  --font-primary: verdana, geneva, tahoma, sans-serif;
-  --font-secondary: poppins, sans-serif;
+  --font-family: -apple-system, 'Segoe UI', roboto, helvetica, arial, sans-serif;
   --font-weight: 400;
   --line-height: 1.6;
   --font-size-1: 1.6rem;
@@ -36,7 +35,7 @@
   --font-size-6: 9.044rem;
 
   /* Borders */
-  --border-primary: 2px solid var(--color-1);
+  --border-primary: 1px solid lightgray;
   --border-secondary: 2px solid var(--color-2);
   --border-radius: var(--size-0);
 }

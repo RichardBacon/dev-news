@@ -1,6 +1,7 @@
 .header {
   align-items: center;
   background-color: var(--color-white);
+  border-bottom: var(--border-primary);
   display: flex;
   height: var(--header-height);
   justify-content: space-between;
