@@ -5,6 +5,7 @@ import PostCard from '../PostCard/PostCard';
 import Loader from '../Loader/Loader';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 import Pagination from '../Pagination/Pagination';
+import Sorter from '../Sorter/Sorter';
 
 class PostList extends Component {
   state = {
@@ -24,40 +25,18 @@ class PostList extends Component {
     if (isLoading) return <Loader />;
     if (err) return <ErrorDisplayer {...err} />;
 
-    const heading = `Posts: ${topic || 'All'}`;
-
     return (
-      <main>
-        <form className={styles.sortingForm}>
-          <label htmlFor="sort_by" aria-label="sort_by">
-            <select
-              className={styles.sortBy}
-              value={sort_by}
-              name="sort_by"
-              id="sort_by"
-              onChange={this.handleInputChange}
-            >
-              <option value="comment_count">Comments</option>
-              <option value="created_at">Date</option>
-              <option value="votes">Votes</option>
-            </select>
-          </label>
+      <>
+        <header className={styles.header}>
+          <h2 className={styles.title}>{`Posts: ${topic || 'All'}`}</h2>
 
-          <label htmlFor="order" aria-label="order">
-            <select
-              className={styles.order}
-              value={order}
-              name="order"
-              id="order"
-              onChange={this.handleInputChange}
-            >
-              <option value="asc">Ascending</option>
-              <option value="desc">Descending</option>
-            </select>
-          </label>
-        </form>
+          <Sorter
+            sort_by={sort_by}
+            order={order}
+            handleInputChange={this.handleInputChange}
+          />
+        </header>
 
-        <h2 className={styles.title}>{heading}</h2>
         <ul>
           {posts.map((post) => {
             const { post_id } = post;
@@ -75,7 +54,7 @@ class PostList extends Component {
           maxPage={maxPage}
           handlePageChange={this.handlePageChange}
         />
-      </main>
+      </>
     );
   }
 

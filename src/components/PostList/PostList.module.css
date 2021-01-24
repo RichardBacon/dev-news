@@ -1,27 +1,12 @@
-.sortingForm {
-  margin: var(--size-2) 0;
-}
-
-.sortBy,
-.order {
-  border: var(--border-primary);
-  border-radius: var(--border-radius);
-  color: var(--color-1);
-  cursor: pointer;
-  margin-right: var(--size-2);
-  padding: var(--size-0) var(--size-1);
-  width: 16rem;
-}
-
-.sortBy:hover,
-.order:hover {
-  border: var(--border-secondary);
-  color: var(--color-2);
+.header {
+  align-items: center;
+  display: flex;
+  height: var(--size-5);
+  justify-content: space-between;
 }
 
 .title {
   color: var(--color-1);
   font-size: var(--size-2);
   font-weight: 600;
-  margin-bottom: var(--size-1);
 }

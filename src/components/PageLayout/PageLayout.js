@@ -16,15 +16,17 @@ const PageLayout = ({ user }) => {
       <Header {...user} />
       <div className={styles.container}>
         <SideNav className={styles.SideNav} />
-        <Router>
-          <PostList path="/" />
-          <PostList path="/posts" />
-          <PostList path="/topics/:topic" />
-          <TopicList path="/topics" />
-          <Post path="/posts/:post_id" username={user.username} />
-          <ErrorDisplayer default />
-        </Router>
-        <OnRouteChange />
+        <main>
+          <Router>
+            <PostList path="/" />
+            <PostList path="/posts" />
+            <PostList path="/topics/:topic" />
+            <TopicList path="/topics" />
+            <Post path="/posts/:post_id" username={user.username} />
+            <ErrorDisplayer default />
+          </Router>
+          <OnRouteChange />
+        </main>
       </div>
       <Footer />
     </>

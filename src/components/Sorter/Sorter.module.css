@@ -1,0 +1,30 @@
+.form {
+  align-items: center;
+  display: flex;
+}
+
+.formLabel {
+  margin-right: var(--size-2);
+}
+
+.label {
+  margin-right: var(--size-2);
+}
+
+.label:last-child {
+  margin-right: 0;
+}
+
+.selector {
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
+  color: var(--color-1);
+  cursor: pointer;
+  padding: var(--size-0) var(--size-1);
+  width: 16rem;
+}
+
+.selector:hover {
+  border: var(--border-secondary);
+  color: var(--color-2);
+}
