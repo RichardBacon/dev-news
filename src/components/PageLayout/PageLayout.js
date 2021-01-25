@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import OnRouteChange from 'reach-router-scroll-top';
 import styles from './PageLayout.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -25,7 +24,6 @@ const PageLayout = ({ user }) => {
             <Post path="/posts/:post_id" username={user.username} />
             <ErrorDisplayer default />
           </Router>
-          <OnRouteChange />
         </main>
       </div>
       <Footer />

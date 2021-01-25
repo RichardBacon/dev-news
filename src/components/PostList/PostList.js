@@ -63,6 +63,8 @@ class PostList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    window.scrollTo(0, 0);
+
     const { sort_by, order, page } = this.state;
     const { topic } = this.props;
 
