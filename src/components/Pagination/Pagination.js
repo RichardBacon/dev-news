@@ -22,7 +22,7 @@ const Pagination = (props) => {
         disabled={page >= maxPage}
         aria-label="next page"
       >
-        <FontAwesomeIcon className="right-icon" icon="arrow-circle-right" />
+        <FontAwesomeIcon className={styles.icon} icon="arrow-circle-right" />
       </button>
     </div>
   );

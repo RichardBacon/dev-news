@@ -11,9 +11,6 @@
   border-radius: 50%;
   color: var(--color-1-1);
   cursor: pointer;
-  font-size: var(--font-size-9);
-  height: var(--size-4);
-  width: var(--size-4);
 }
 
 .btn:hover {
@@ -21,11 +18,16 @@
 }
 
 .btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.25;
+  visibility: hidden;
 }
 
 .icon {
   display: block;
+  font-size: var(--font-size-9);
   margin: 0 auto;
+}
+
+.page {
+  color: var(--color-1-2);
+  font-size: var(--font-size-3);
 }
