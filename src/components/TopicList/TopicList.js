@@ -19,8 +19,11 @@ class TopicList extends Component {
     if (err) return <ErrorDisplayer {...err} />;
 
     return (
-      <main>
-        <h2 className={styles.title}>Topics</h2>
+      <>
+        <header className={styles.header}>
+          <h2 className={styles.title}>Topics</h2>
+        </header>
+
         <ul>
           {topics.map((topic) => {
             const { title } = topic;
@@ -32,7 +35,7 @@ class TopicList extends Component {
             );
           })}
         </ul>
-      </main>
+      </>
     );
   }
 

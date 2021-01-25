@@ -10,7 +10,7 @@ const TopicCard = (props) => {
       <Link className={styles.link} to={`/topics/${title}`}>
         <h3 className={styles.title}>{title}</h3>
       </Link>
-      <p>{description}</p>
+      <p className={styles.details}>{description}</p>
     </article>
   );
 };
