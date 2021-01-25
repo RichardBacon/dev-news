@@ -11,7 +11,10 @@ import {
   faArrowCircleLeft,
   faArrowCircleRight,
   faTimesCircle,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
+
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
   faNewspaper,
@@ -19,7 +22,9 @@ library.add(
   faArrowCircleDown,
   faArrowCircleLeft,
   faArrowCircleRight,
-  faTimesCircle
+  faTimesCircle,
+  faHeart,
+  farHeart
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -2,8 +2,7 @@
   margin-top: var(--size-1);
 }
 
-.upBtn,
-.downBtn {
+.btn {
   background-color: var(--color-white);
   border: none;
   border-radius: 50%;
@@ -14,19 +13,11 @@
   width: var(--size-4);
 }
 
-.upBtn:hover,
-.downBtn:hover {
+.btn:hover {
   color: var(--color-2-1);
 }
 
-.upBtn:disabled,
-.downBtn:disabled {
-  cursor: not-allowed;
-  opacity: 0.25;
-}
-
-.upIcon,
-.downIcon {
+.icon {
   display: block;
   margin: 0 auto;
 }

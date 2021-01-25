@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { format } from 'date-fns';
 import * as api from '../../utils/api';
 import styles from './Post.module.css';
 import CommentList from '../CommentList/CommentList';
 import Loader from '../Loader/Loader';
-import VoteUpdater from '../VoteUpdater/VoteUpdater';
+import LikeUpdater from '../LikeUpdater/LikeUpdater';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 
 class Post extends Component {
@@ -32,22 +33,37 @@ class Post extends Component {
     } = post;
 
     return (
-      <main>
+      <>
         <article className={styles.post}>
-          <h2 className={styles.title}>{title}</h2>
-          <p>topic: {topic}</p>
-          <p>posted by: {created_by}</p>
+          <p className={styles.user}>{created_by}</p>
+          <p className={styles.date}>
+            {format(new Date(created_at), 'dd MMM yyyy HH:mm')}
+          </p>
+
+          <h3 className={styles.title}>{title}</h3>
+
+          <div className={styles.details}>
+            <p>🏷 {topic}</p>
+            <p>
+              {`💬 ${comment_count} comment${
+                Number(comment_count) === 1 ? '' : 's'
+              }`}
+            </p>
+            <p>{`👍 ${votes} like${Number(votes) === 1 ? '' : 's'}`}</p>
+          </div>
+
           <p>{body}</p>
-          <p>posted: {new Date(created_at).toLocaleString()}</p>
-          <p>comments: {comment_count}</p>
-          <VoteUpdater post_id={post_id} votes={votes} />
+          <LikeUpdater
+            updateLikeCount={this.updateLikeCount}
+            post_id={post_id}
+          />
         </article>
         <CommentList
           updateCommentCount={this.updateCommentCount}
           post_id={post_id}
           username={username}
         />
-      </main>
+      </>
     );
   }
 
@@ -79,6 +95,18 @@ class Post extends Component {
       const updatedCommentCount =
         parseInt(updatedPost.comment_count) + increment;
       updatedPost.comment_count = updatedCommentCount;
+
+      return {
+        post: updatedPost,
+      };
+    });
+  };
+
+  updateLikeCount = (increment) => {
+    this.setState((currentState) => {
+      const updatedPost = { ...currentState.post };
+      const updatedLikeCount = parseInt(updatedPost.votes) + increment;
+      updatedPost.votes = updatedLikeCount;
 
       return {
         post: updatedPost,

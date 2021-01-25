@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Comment.module.css';
 import * as api from '../../utils/api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import VoteUpdater from '../VoteUpdater/VoteUpdater';
 
 const Comment = (props) => {
   const {
@@ -12,7 +11,6 @@ const Comment = (props) => {
     created_by,
     body,
     created_at,
-    votes,
   } = props;
 
   const handleDelete = () => {
@@ -26,7 +24,7 @@ const Comment = (props) => {
       <p>{body}</p>
       <p>posted by: {created_by}</p>
       <p>posted: {new Date(created_at).toLocaleString()}</p>
-      <VoteUpdater comment_id={comment_id} votes={votes} />
+
       {username === created_by && (
         <button
           className={styles.deleteBtn}
