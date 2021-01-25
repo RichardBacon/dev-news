@@ -21,6 +21,19 @@
   margin-bottom: var(--size-1);
 }
 
+.link {
+  color: var(--color-1-1);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-2-1);
+}
+
+.link:active {
+  color: var(--color-1-1);
+}
+
 .details {
   color: var(--color-1-2);
   margin-bottom: var(--size-1);

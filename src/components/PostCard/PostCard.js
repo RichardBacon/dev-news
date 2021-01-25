@@ -24,7 +24,9 @@ const PostCard = (props) => {
         <h3 className={styles.title}>{title}</h3>
       </Link>
       <div className={styles.details}>
-        <p>🏷 {topic}</p>
+        <Link className={styles.link} to={`/topics/${topic}`}>
+          <p>🏷 {topic}</p>
+        </Link>
         <p>
           {`💬 ${comment_count} comment${
             Number(comment_count) === 1 ? '' : 's'

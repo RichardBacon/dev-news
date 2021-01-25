@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { format } from 'date-fns';
 import * as api from '../../utils/api';
 import styles from './Post.module.css';
+import { Link } from '@reach/router';
 import CommentList from '../CommentList/CommentList';
 import Loader from '../Loader/Loader';
 import LikeUpdater from '../LikeUpdater/LikeUpdater';
@@ -43,7 +44,9 @@ class Post extends Component {
           <h3 className={styles.title}>{title}</h3>
 
           <div className={styles.details}>
-            <p>🏷 {topic}</p>
+            <Link className={styles.link} to={`/topics/${topic}`}>
+              <p>🏷 {topic}</p>
+            </Link>
             <p>
               {`💬 ${comment_count} comment${
                 Number(comment_count) === 1 ? '' : 's'
