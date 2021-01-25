@@ -17,25 +17,32 @@
 
   /* Colors */
   --color-white: #fff;
-  --color-1: #08090a;
-  --color-2: #323ebe;
-  --color-3: #eef0f1;
-  --color-4: #d2d6db;
+  --color-1-1: #08090a;
+  --color-1-2: #505a63;
+  --color-2-1: #323ebe;
+  --color-3-1: #eef0f1;
+  --color-3-2: #d7d8d9;
   --color-danger: #d61f1f;
 
   /* Fonts */
   --font-family: -apple-system, 'Segoe UI', roboto, helvetica, arial, sans-serif;
   --font-weight: 400;
   --line-height: 1.6;
-  --font-size-1: 1.6rem;
-  --font-size-2: 2.262rem;
-  --font-size-3: 3.199rem;
-  --font-size-4: 4.523rem;
-  --font-size-5: 6.396rem;
-  --font-size-6: 9.044rem;
+  --font-size-1: 1.264rem;
+  --font-size-2: 1.422rem;
+  --font-size-3: 1.6rem;
+  --font-size-4: 1.8rem;
+  --font-size-5: 2.025rem;
+  --font-size-6: 2.278rem;
+  --font-size-7: 2.563rem;
+  --font-size-8: 2.883rem;
+  --font-size-9: 3.244rem;
+  --font-size-10: 3.649rem;
+  --font-size-11: 4.105rem;
+  --font-size-12: 4.618rem;
 
   /* Borders */
-  --border-primary: 1px solid lightgray;
-  --border-secondary: 1px solid var(--color-2);
+  --border-primary: 1px solid var(--color-3-2);
+  --border-secondary: 1px solid var(--color-2-1);
   --border-radius: var(--size-0);
 }

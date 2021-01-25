@@ -9,15 +9,15 @@
   background-color: var(--color-white);
   border: none;
   border-radius: 50%;
-  color: var(--color-1);
+  color: var(--color-1-1);
   cursor: pointer;
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-9);
   height: var(--size-4);
   width: var(--size-4);
 }
 
 .btn:hover {
-  color: var(--color-2);
+  color: var(--color-2-1);
 }
 
 .btn:disabled {

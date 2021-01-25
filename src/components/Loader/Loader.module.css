@@ -1,8 +1,8 @@
 .loader {
   animation: spin 2s linear infinite;
-  border: var(--size-2) solid var(--color-1);
+  border: var(--size-2) solid var(--color-1-1);
   border-radius: 50%;
-  border-top: var(--size-2) solid var(--color-1);
+  border-top: var(--size-2) solid var(--color-1-1);
   height: 16rem;
   margin: 0 auto;
   width: 16rem;

@@ -18,7 +18,7 @@
 .selector {
   border: var(--border-primary);
   border-radius: var(--border-radius);
-  color: var(--color-1);
+  color: var(--color-1-1);
   cursor: pointer;
   padding: var(--size-0) var(--size-1);
   width: 16rem;
@@ -26,5 +26,5 @@
 
 .selector:hover {
   border: var(--border-secondary);
-  color: var(--color-2);
+  color: var(--color-2-1);
 }
