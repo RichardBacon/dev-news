@@ -10,7 +10,7 @@ const fetchTopics = () => {
 
 const fetchPosts = (sort_by, order, topic, page) => {
   return axios
-    .get(`${baseURL}/posts`, { params: { sort_by, order, topic, p: page } })
+    .get(`${baseURL}/posts`, { params: { sort_by, order, topic, page } })
     .then(({ data: { posts, total_count } }) => {
       return { posts, total_count };
     });
@@ -18,7 +18,7 @@ const fetchPosts = (sort_by, order, topic, page) => {
 
 const fetchComments = (post_id, page) => {
   return axios
-    .get(`${baseURL}/posts/${post_id}/comments`, { params: { p: page } })
+    .get(`${baseURL}/posts/${post_id}/comments`, { params: { page } })
     .then(({ data: { comments, total_count } }) => {
       return { comments, total_count };
     });
