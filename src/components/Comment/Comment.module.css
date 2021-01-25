@@ -1,31 +1,36 @@
 .comment {
+  background-color: var(--color-white);
   border: var(--border-primary);
   border-radius: var(--border-radius);
   margin-bottom: var(--size-2);
-  padding: var(--size-1) var(--size-2);
+  padding: var(--size-1) var(--size-3);
+}
+
+.user {
+  font-size: var(--font-size-2);
+}
+
+.date {
+  color: var(--color-1-2);
+  font-size: var(--font-size-1);
+  margin-bottom: var(--size-1);
+}
+
+.body {
+  margin-bottom: var(--size-1);
 }
 
 .deleteBtn {
-  background-color: var(--color-white);
-  border: none;
-  border-radius: 50%;
-  color: var(--color-danger);
+  background-color: var(--color-danger);
+  border: var(--border-danger);
+  border-radius: var(--border-radius);
+  color: var(--color-white);
   cursor: pointer;
-  font-size: var(--font-size-9);
-  height: var(--size-4);
-  width: var(--size-4);
+  padding: var(--size-0) var(--size-1);
 }
 
-.deleteBtn:hover {
-  color: var(--color-grey);
-}
-
-.deleteBtn:disabled {
-  cursor: not-allowed;
-  opacity: 0.25;
-}
-
-.deleteIcon {
-  display: block;
-  margin: 0 auto;
+.deleteBtn:hover,
+.deleteBtn:focus {
+  background-color: var(--color-white);
+  color: var(--color-danger);
 }

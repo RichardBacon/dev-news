@@ -1,12 +1,12 @@
 .commentAdder {
-  margin-bottom: var(--size-4);
+  margin-bottom: var(--size-2);
 }
 
 .commentText {
   border: var(--border-primary);
   border-radius: var(--border-radius);
   height: 20rem;
-  margin-bottom: var(--size-1);
+  margin-bottom: var(--size-0);
   min-width: 100%;
   padding: var(--size-1);
   resize: none;
@@ -17,16 +17,17 @@
 }
 
 .commentBtn {
-  background-color: var(--color-white);
+  background-color: var(--color-2-1);
   border: var(--border-primary);
   border-radius: var(--border-radius);
-  color: var(--color-1-1);
+  color: var(--color-white);
   cursor: pointer;
-  padding: var(--size-0);
+  padding: var(--size-0) var(--size-1);
 }
 
 .commentBtn:hover,
 .commentBtn:focus {
+  background-color: var(--color-white);
   border: var(--border-secondary);
   color: var(--color-2-1);
 }

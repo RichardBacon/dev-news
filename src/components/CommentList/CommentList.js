@@ -22,13 +22,15 @@ class CommentList extends Component {
 
     return (
       <section>
+        <header className={styles.header}>
+          <h2 className={styles.title}>Comments</h2>
+        </header>
+
         <CommentAdder
           post_id={post_id}
           username={username}
           addCommentToState={this.addCommentToState}
         />
-
-        <h2 className={styles.title}>Comments</h2>
 
         <ul>
           {comments.map((comment) => {

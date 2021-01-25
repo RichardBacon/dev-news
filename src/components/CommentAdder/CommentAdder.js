@@ -20,12 +20,12 @@ class CommentAdder extends Component {
           value={body}
           onChange={this.handleInputChange}
           required
-          placeholder="Comment..."
+          placeholder="Add a comment..."
           maxLength={255}
         ></textarea>
 
         <button className={styles.commentBtn} aria-label="add">
-          Add
+          Submit
         </button>
       </form>
     );

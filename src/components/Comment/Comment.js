@@ -1,7 +1,7 @@
 import React from 'react';
+import { format } from 'date-fns';
 import styles from './Comment.module.css';
 import * as api from '../../utils/api';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Comment = (props) => {
   const {
@@ -21,9 +21,12 @@ const Comment = (props) => {
 
   return (
     <article className={styles.comment}>
-      <p>{body}</p>
-      <p>posted by: {created_by}</p>
-      <p>posted: {new Date(created_at).toLocaleString()}</p>
+      <p className={styles.user}>{created_by}</p>
+      <p className={styles.date}>
+        {format(new Date(created_at), 'dd MMM yyyy HH:mm')}
+      </p>
+
+      <p className={styles.body}>{body}</p>
 
       {username === created_by && (
         <button
@@ -31,7 +34,7 @@ const Comment = (props) => {
           onClick={handleDelete}
           aria-label="delete"
         >
-          <FontAwesomeIcon className={styles.deleteIcon} icon="times-circle" />
+          Delete
         </button>
       )}
     </article>
