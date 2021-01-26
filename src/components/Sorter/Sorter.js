@@ -15,7 +15,7 @@ const Sorter = ({ sort_by, order, handleInputChange }) => {
         >
           <option value="comment_count">Comments</option>
           <option value="created_at">Date</option>
-          <option value="votes">Votes</option>
+          <option value="votes">Likes</option>
         </select>
       </label>
 
