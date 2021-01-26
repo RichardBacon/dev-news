@@ -5,7 +5,7 @@ import PageLayout from '../PageLayout/PageLayout';
 class App extends Component {
   state = {
     user: {
-      username: 'ComicDisaster',
+      username: 'TopCoder',
     },
   };
 
