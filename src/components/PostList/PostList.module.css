@@ -1,12 +1,14 @@
 .header {
   align-items: center;
   display: flex;
-  height: var(--size-5);
+  flex-wrap: wrap;
   justify-content: space-between;
+  padding: var(--size-2) 0;
 }
 
 .title {
   color: var(--color-1-1);
   font-size: var(--size-2);
   font-weight: 600;
+  margin-right: var(--size-2);
 }

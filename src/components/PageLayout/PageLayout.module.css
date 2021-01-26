@@ -1,8 +1,27 @@
 .container {
   display: grid;
   gap: var(--size-2);
-  grid-template-columns: 28rem auto 28rem;
+  grid-template-columns: minmax(auto, 28rem) auto minmax(auto, 28rem);
   margin: 0 auto;
   max-width: var(--max-width);
   min-height: 100vh;
+  padding: 0 var(--size-1);
+}
+
+@media only screen and (max-width: 80em) {
+  .container {
+    max-width: initial;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container {
+    grid-template-columns: minmax(auto, 16rem) auto;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .container {
+    grid-template-columns: auto;
+  }
 }

@@ -3,9 +3,15 @@
   background-color: var(--color-white);
   border-bottom: var(--border-primary);
   display: flex;
-  height: var(--header-height);
   justify-content: space-between;
-  padding: 0 calc((100% - var(--max-width)) / 2);
+  min-height: var(--header-height);
+  padding: var(--size-1) calc(((100% - var(--max-width)) / 2) + var(--size-1));
+}
+
+@media only screen and (max-width: 80em) {
+  .header {
+    padding: var(--size-1);
+  }
 }
 
 .link {
