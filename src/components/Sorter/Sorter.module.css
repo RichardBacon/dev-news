@@ -29,7 +29,9 @@
   padding: var(--size-0) var(--size-1);
 }
 
-.selector:hover {
-  border: var(--border-secondary);
-  color: var(--color-2-1);
+@media (hover: hover) and (pointer: fine) {
+  .selector:hover {
+    border: var(--border-secondary);
+    color: var(--color-2-1);
+  }
 }

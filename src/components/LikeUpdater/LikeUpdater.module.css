@@ -13,8 +13,10 @@
   width: var(--size-4);
 }
 
-.btn:hover {
-  color: var(--color-2-1);
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    color: var(--color-2-1);
+  }
 }
 
 .icon {

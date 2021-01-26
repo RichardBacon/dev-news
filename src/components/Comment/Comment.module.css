@@ -29,8 +29,9 @@
   padding: var(--size-0) var(--size-1);
 }
 
-.deleteBtn:hover,
-.deleteBtn:focus {
-  background-color: var(--color-white);
-  color: var(--color-danger);
+@media (hover: hover) and (pointer: fine) {
+  .deleteBtn:hover {
+    background-color: var(--color-white);
+    color: var(--color-danger);
+  }
 }

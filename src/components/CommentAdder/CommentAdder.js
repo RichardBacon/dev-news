@@ -52,6 +52,7 @@ class CommentAdder extends Component {
     const { addCommentToState, post_id, username } = this.props;
 
     const newComment = { username, body };
+    console.log(post_id, newComment);
     api.postComment(post_id, newComment).then((comment) => {
       addCommentToState(comment);
     });

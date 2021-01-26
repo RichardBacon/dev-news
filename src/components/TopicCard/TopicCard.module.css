@@ -17,12 +17,10 @@
   text-decoration: none;
 }
 
-.link:hover {
-  color: var(--color-2-1);
-}
-
-.link:active {
-  color: var(--color-1-1);
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: var(--color-2-1);
+  }
 }
 
 .details {

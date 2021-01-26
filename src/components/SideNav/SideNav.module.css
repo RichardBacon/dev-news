@@ -17,7 +17,9 @@
   width: 100%;
 }
 
-.listItem:hover .link {
-  background-color: var(--color-3-2);
-  color: var(--color-2-1);
+@media (hover: hover) and (pointer: fine) {
+  .listItem:hover .link {
+    background-color: var(--color-3-2);
+    color: var(--color-2-1);
+  }
 }
