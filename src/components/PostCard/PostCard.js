@@ -21,7 +21,7 @@ const PostCard = (props) => {
         {format(new Date(created_at), 'dd MMM yyyy HH:mm')}
       </p>
       <Link className={styles.link} to={`/posts/${post_id}`}>
-        <h3 className={styles.title}>{title}</h3>
+        <h2 className={styles.title}>{title}</h2>
       </Link>
       <div className={styles.details}>
         <Link className={styles.link} to={`/topics/${topic}`}>

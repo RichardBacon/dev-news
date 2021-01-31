@@ -21,7 +21,7 @@ class TopicList extends Component {
     return (
       <>
         <header className={styles.header}>
-          <h2 className={styles.title}>Topics</h2>
+          <h1 className={styles.title}>Topics</h1>
         </header>
 
         <ul>

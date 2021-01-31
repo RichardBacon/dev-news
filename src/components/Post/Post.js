@@ -41,7 +41,7 @@ class Post extends Component {
             {format(new Date(created_at), 'dd MMM yyyy HH:mm')}
           </p>
 
-          <h3 className={styles.title}>{title}</h3>
+          <h1 className={styles.title}>{title}</h1>
 
           <div className={styles.details}>
             <Link className={styles.link} to={`/topics/${topic}`}>
