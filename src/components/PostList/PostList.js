@@ -22,7 +22,6 @@ class PostList extends Component {
     const { posts, isLoading, sort_by, order, err, page, maxPage } = this.state;
     const { topic } = this.props;
 
-    if (isLoading) return <Loader />;
     if (err) return <ErrorDisplayer {...err} />;
 
     return (
@@ -37,23 +36,29 @@ class PostList extends Component {
           />
         </header>
 
-        <ul>
-          {posts.map((post) => {
-            const { post_id } = post;
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <ul>
+              {posts.map((post) => {
+                const { post_id } = post;
 
-            return (
-              <li key={post_id}>
-                <PostCard {...post} />
-              </li>
-            );
-          })}
-        </ul>
+                return (
+                  <li key={post_id}>
+                    <PostCard {...post} />
+                  </li>
+                );
+              })}
+            </ul>
 
-        <Pagination
-          page={page}
-          maxPage={maxPage}
-          handlePageChange={this.handlePageChange}
-        />
+            <Pagination
+              page={page}
+              maxPage={maxPage}
+              handlePageChange={this.handlePageChange}
+            />
+          </>
+        )}
       </>
     );
   }

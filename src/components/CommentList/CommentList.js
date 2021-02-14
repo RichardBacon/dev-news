@@ -18,8 +18,6 @@ class CommentList extends Component {
     const { comments, isLoading, page, maxPage } = this.state;
     const { post_id, username } = this.props;
 
-    if (isLoading) return <Loader />;
-
     return (
       <section>
         <header className={styles.header}>
@@ -32,21 +30,25 @@ class CommentList extends Component {
           addCommentToState={this.addCommentToState}
         />
 
-        <ul>
-          {comments.map((comment) => {
-            const { comment_id } = comment;
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ul>
+            {comments.map((comment) => {
+              const { comment_id } = comment;
 
-            return (
-              <li key={comment_id}>
-                <Comment
-                  deleteCommentFromState={this.deleteCommentFromState}
-                  username={username}
-                  {...comment}
-                />
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={comment_id}>
+                  <Comment
+                    deleteCommentFromState={this.deleteCommentFromState}
+                    username={username}
+                    {...comment}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        )}
 
         <Pagination
           page={page}

@@ -15,7 +15,6 @@ class TopicList extends Component {
   render() {
     const { topics, isLoading, err } = this.state;
 
-    if (isLoading) return <Loader />;
     if (err) return <ErrorDisplayer {...err} />;
 
     return (
@@ -24,17 +23,21 @@ class TopicList extends Component {
           <h1 className={styles.title}>Topics</h1>
         </header>
 
-        <ul>
-          {topics.map((topic) => {
-            const { title } = topic;
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ul>
+            {topics.map((topic) => {
+              const { title } = topic;
 
-            return (
-              <li key={title}>
-                <TopicCard {...topic} />
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={title}>
+                  <TopicCard {...topic} />
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </>
     );
   }

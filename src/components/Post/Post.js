@@ -19,7 +19,6 @@ class Post extends Component {
     const { post, isLoading, err } = this.state;
     const { username } = this.props;
 
-    if (isLoading) return <Loader />;
     if (err) return <ErrorDisplayer {...err} />;
 
     const {
@@ -33,7 +32,9 @@ class Post extends Component {
       comment_count,
     } = post;
 
-    return (
+    return isLoading ? (
+      <Loader />
+    ) : (
       <>
         <article className={styles.post}>
           <p className={styles.user}>{created_by}</p>
@@ -61,6 +62,7 @@ class Post extends Component {
             post_id={post_id}
           />
         </article>
+
         <CommentList
           updateCommentCount={this.updateCommentCount}
           post_id={post_id}
