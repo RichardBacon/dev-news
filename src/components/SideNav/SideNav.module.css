@@ -1,11 +1,36 @@
+.nav {
+  margin-top: var(--size-1);
+}
+
 .list {
   display: flex;
   flex-direction: column;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .list {
+    flex-direction: row;
+  }
+}
+
 .listItem {
   cursor: pointer;
-  margin-top: var(--size-1);
+  margin-bottom: var(--size-1);
+}
+
+.listItem:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .listItem {
+    margin-bottom: 0;
+    margin-right: var(--size-1);
+  }
+
+  .listItem:last-child {
+    margin-right: 0;
+  }
 }
 
 .link {
