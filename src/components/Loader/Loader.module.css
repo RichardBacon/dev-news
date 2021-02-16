@@ -1,11 +1,11 @@
 .loader {
-  animation: spin 2s linear infinite;
-  border: var(--size-2) solid var(--color-1-2);
+  animation: spin 1s linear infinite;
+  border: var(--size-0) solid var(--color-1-2);
   border-radius: 50%;
-  border-top: var(--size-2) solid var(--color-white);
-  height: 16rem;
+  border-top: var(--size-0) solid var(--color-white);
+  height: 4rem;
   margin: 0 auto;
-  width: 16rem;
+  width: 4rem;
 }
 
 @keyframes spin {
