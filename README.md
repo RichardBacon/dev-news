@@ -2,13 +2,11 @@
 
 The hosted app: [Dev News](https://dev-news-frontend.netlify.app/)
 
-This repo is for the frontend web app. The repo for the backend API can be found here: [Dev News API](https://github.com/RichardJonBacon/dev-news-api).
+This repo is for the frontend web app. The repo for the backend API can be found here: [Dev News API](https://github.com/RichardBacon/dev-news-api).
 
 ## Description
 
 A mock news and discussion site for developers, inspired by [Reddit](https://www.reddit.com/) and [DEV Community](https://dev.to/).
-
-This app was initially created as a project for the [Northcoders](https://northcoders.com/) Coding Bootcamp as a method of learning and demonstrating knowledge of professional full-stack development.
 
 ## Functionality
 
@@ -67,8 +65,8 @@ npm run build
 
 ## Authors
 
-- **Richard Bacon** - [RichardJonBacon](https://github.com/RichardJonBacon)
+- **Richard Bacon** - [RichardBacon](https://github.com/RichardBacon)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
