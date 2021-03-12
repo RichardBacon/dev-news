@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Sorter.module.css';
 
-const Sorter = ({ sort_by, order, handleInputChange }) => {
+const Sorter = ({ sort_by, order, setSort_by, setOrder }) => {
   return (
     <form className={styles.form}>
       <p className={styles.formLabel}>Sorted By:</p>
@@ -12,7 +12,7 @@ const Sorter = ({ sort_by, order, handleInputChange }) => {
             value={sort_by}
             name="sort_by"
             id="sort_by"
-            onChange={handleInputChange}
+            onChange={setSort_by}
           >
             <option value="comment_count">Comments</option>
             <option value="created_at">Date</option>
@@ -28,7 +28,7 @@ const Sorter = ({ sort_by, order, handleInputChange }) => {
             value={order}
             name="order"
             id="order"
-            onChange={handleInputChange}
+            onChange={setOrder}
           >
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>

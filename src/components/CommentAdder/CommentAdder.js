@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './CommentAdder.module.css';
 import * as api from '../../utils/api';
+import useInputState from '../../hooks/useInputState';
 
 const CommentAdder = ({ addCommentToState, post_id, username }) => {
-  const [body, setBody] = useState('');
-
-  const handleInputChange = (event) => {
-    const { value } = event.target;
-    setBody(value);
-  };
+  const [body, setBody, resetBody] = useInputState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     addComment();
-    setBody(body);
+    resetBody();
   };
 
   const addComment = () => {
@@ -32,7 +28,7 @@ const CommentAdder = ({ addCommentToState, post_id, username }) => {
         id="body"
         name="body"
         value={body}
-        onChange={handleInputChange}
+        onChange={setBody}
         required
         placeholder="Add a comment..."
         maxLength={255}

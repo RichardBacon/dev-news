@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './PostList.module.css';
 import * as api from '../../utils/api';
+import useInputState from '../../hooks/useInputState';
 import PostCard from '../PostCard/PostCard';
 import Loader from '../Loader/Loader';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
@@ -12,8 +13,8 @@ const PostList = () => {
   const { topic } = useParams();
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [sort_by, setSort_by] = useState('created_at');
-  const [order, setOrder] = useState('desc');
+  const [sort_by, setSort_by] = useInputState('created_at');
+  const [order, setOrder] = useInputState('desc');
   const [err, setErr] = useState(null);
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
@@ -38,17 +39,6 @@ const PostList = () => {
       });
   }, [sort_by, order, page, topic]);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-
-    if (name === 'sort_by') {
-      setSort_by(value);
-    }
-    if (name === 'order') {
-      setOrder(value);
-    }
-  };
-
   const handlePageChange = (direction) => {
     setPage((page) => page + direction);
   };
@@ -63,7 +53,8 @@ const PostList = () => {
         <Sorter
           sort_by={sort_by}
           order={order}
-          handleInputChange={handleInputChange}
+          setSort_by={setSort_by}
+          setOrder={setOrder}
         />
       </header>
 
