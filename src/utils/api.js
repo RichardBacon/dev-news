@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const baseURL = 'https://dev-news-api.herokuapp.com/api';
+const baseURL =
+  process.env.REACT_APP_BASE_URL || 'https://dev-news-api.herokuapp.com/api';
 
 const fetchTopics = () => {
   return axios.get(`${baseURL}/topics`).then(({ data: { topics } }) => {
