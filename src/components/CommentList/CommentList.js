@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as api from '../../utils/api';
 import styles from './CommentList.module.css';
 import Comment from '../Comment/Comment';
@@ -6,120 +6,87 @@ import CommentAdder from '../CommentAdder/CommentAdder';
 import Loader from '../Loader/Loader';
 import Pagination from '../Pagination/Pagination';
 
-class CommentList extends Component {
-  state = {
-    comments: [],
-    isLoading: true,
-    page: 1,
-    maxPage: 1,
-  };
+const CommentList = ({ post_id, username, updateCommentCount }) => {
+  const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
 
-  render() {
-    const { comments, isLoading, page, maxPage } = this.state;
-    const { post_id, username } = this.props;
-
-    return (
-      <section>
-        <header className={styles.header}>
-          <h2 className={styles.title}>Comments</h2>
-        </header>
-
-        <CommentAdder
-          post_id={post_id}
-          username={username}
-          addCommentToState={this.addCommentToState}
-        />
-
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <ul>
-            {comments.map((comment) => {
-              const { comment_id } = comment;
-
-              return (
-                <li key={comment_id}>
-                  <Comment
-                    deleteCommentFromState={this.deleteCommentFromState}
-                    username={username}
-                    {...comment}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        )}
-
-        <Pagination
-          page={page}
-          maxPage={maxPage}
-          handlePageChange={this.handlePageChange}
-        />
-      </section>
-    );
-  }
-
-  componentDidMount() {
-    this.getComments();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { page } = this.state;
-
-    const pageChanged = prevState.page !== page;
-
-    if (pageChanged) {
-      this.getComments();
-    }
-  }
-
-  getComments = () => {
-    const { page } = this.state;
-    const { post_id } = this.props;
-
-    this.setState({ isLoading: true });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsLoading(true);
 
     api.fetchComments(post_id, page).then(({ comments, total_count }) => {
       const maxPage = Math.ceil(total_count / 10);
 
-      this.setState({ comments, isLoading: false, maxPage });
+      setComments(comments);
+      setMaxPage(maxPage);
+      setIsLoading(false);
     });
-  };
+  }, [post_id, page]);
 
-  addCommentToState = (newComment) => {
-    const { updateCommentCount } = this.props;
-
-    this.setState(({ comments }) => {
-      return {
-        comments: [newComment, ...comments],
-      };
+  const addCommentToState = (newComment) => {
+    setComments((comments) => {
+      return [newComment, ...comments];
     });
 
     updateCommentCount(1);
   };
 
-  deleteCommentFromState = (comment_id) => {
-    const { updateCommentCount } = this.props;
-
-    this.setState(({ comments }) => {
+  const deleteCommentFromState = (comment_id) => {
+    setComments((comments) => {
       const updatedComments = comments.filter(
         (comment) => comment_id !== comment.comment_id
       );
-      return {
-        comments: updatedComments,
-      };
+      return updatedComments;
     });
 
     updateCommentCount(-1);
   };
 
-  handlePageChange = (direction) => {
-    this.setState(({ page }) => {
-      return {
-        page: page + direction,
-      };
-    });
+  const handlePageChange = (direction) => {
+    setPage((page) => page + direction);
   };
-}
+
+  return (
+    <section>
+      <header className={styles.header}>
+        <h2 className={styles.title}>Comments</h2>
+      </header>
+
+      <CommentAdder
+        post_id={post_id}
+        username={username}
+        addCommentToState={addCommentToState}
+      />
+
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ul>
+          {comments.map((comment) => {
+            const { comment_id } = comment;
+
+            return (
+              <li key={comment_id}>
+                <Comment
+                  deleteCommentFromState={deleteCommentFromState}
+                  username={username}
+                  {...comment}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      )}
+
+      <Pagination
+        page={page}
+        maxPage={maxPage}
+        handlePageChange={handlePageChange}
+      />
+    </section>
+  );
+};
 
 export default CommentList;

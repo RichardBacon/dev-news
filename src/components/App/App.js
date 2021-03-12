@@ -5,7 +5,7 @@ import AppLayout from '../AppLayout/AppLayout';
 
 const App = () => {
   const user = {
-    username: 'TopCoder',
+    username: 'username1',
   };
 
   return (
