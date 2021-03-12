@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import styles from './PostList.module.css';
 import * as api from '../../utils/api';
 import PostCard from '../PostCard/PostCard';
@@ -7,7 +8,8 @@ import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 import Pagination from '../Pagination/Pagination';
 import Sorter from '../Sorter/Sorter';
 
-const PostList = ({ topic }) => {
+const PostList = () => {
+  const { topic } = useParams();
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sort_by, setSort_by] = useState('created_at');

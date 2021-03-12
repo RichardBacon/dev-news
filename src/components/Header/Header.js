@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (

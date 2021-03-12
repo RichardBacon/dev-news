@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SideNav.module.css';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 
 const SideNav = () => {
   return (

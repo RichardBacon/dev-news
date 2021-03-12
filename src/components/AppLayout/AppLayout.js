@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { Routes } from 'react-router-dom';
 import styles from './AppLayout.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -16,14 +16,14 @@ const AppLayout = ({ user }) => {
       <div className={styles.container}>
         <SideNav className={styles.SideNav} />
         <main>
-          <Router>
+          <Routes>
             <PostList path="/" />
             <PostList path="/posts" />
             <PostList path="/topics/:topic" />
             <TopicList path="/topics" />
             <Post path="/posts/:post_id" username={user.username} />
-            <ErrorDisplayer default />
-          </Router>
+            <ErrorDisplayer path="*" />
+          </Routes>
         </main>
       </div>
       <Footer />

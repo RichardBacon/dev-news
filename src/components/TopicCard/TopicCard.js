@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './TopicCard.module.css';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 
 const TopicCard = (props) => {
   const { title, description } = props;
