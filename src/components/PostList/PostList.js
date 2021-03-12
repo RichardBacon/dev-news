@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './PostList.module.css';
 import * as api from '../../utils/api';
 import PostCard from '../PostCard/PostCard';
@@ -7,124 +7,89 @@ import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 import Pagination from '../Pagination/Pagination';
 import Sorter from '../Sorter/Sorter';
 
-class PostList extends Component {
-  state = {
-    posts: [],
-    isLoading: true,
-    sort_by: 'created_at',
-    order: 'desc',
-    err: null,
-    page: 1,
-    maxPage: 1,
-  };
+const PostList = ({ topic }) => {
+  const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [sort_by, setSort_by] = useState('created_at');
+  const [order, setOrder] = useState('desc');
+  const [err, setErr] = useState(null);
+  const [page, setPage] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
 
-  render() {
-    const { posts, isLoading, sort_by, order, err, page, maxPage } = this.state;
-    const { topic } = this.props;
-
-    if (err) return <ErrorDisplayer {...err} />;
-
-    return (
-      <>
-        <header className={styles.header}>
-          <h1 className={styles.title}>{`Posts: ${topic || 'All'}`}</h1>
-
-          <Sorter
-            sort_by={sort_by}
-            order={order}
-            handleInputChange={this.handleInputChange}
-          />
-        </header>
-
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <>
-            <ul>
-              {posts.map((post) => {
-                const { post_id } = post;
-
-                return (
-                  <li key={post_id}>
-                    <PostCard {...post} />
-                  </li>
-                );
-              })}
-            </ul>
-
-            <Pagination
-              page={page}
-              maxPage={maxPage}
-              handlePageChange={this.handlePageChange}
-            />
-          </>
-        )}
-      </>
-    );
-  }
-
-  componentDidMount() {
-    this.getPosts();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
+  useEffect(() => {
     window.scrollTo(0, 0);
-
-    const { sort_by, order, page } = this.state;
-    const { topic } = this.props;
-
-    const sort_byChanged = prevState.sort_by !== sort_by;
-    const orderChanged = prevState.order !== order;
-    const pageChanged = prevState.page !== page;
-    const topicChanged = prevProps.topic !== topic;
-
-    if (topicChanged) {
-      this.setState({ page: 1 });
-    }
-
-    if (
-      sort_byChanged ||
-      orderChanged ||
-      (topicChanged && page === 1) ||
-      pageChanged
-    ) {
-      this.getPosts();
-    }
-  }
-
-  getPosts = () => {
-    const { sort_by, order, page } = this.state;
-    const { topic } = this.props;
-
-    this.setState({ isLoading: true });
+    setIsLoading(true);
 
     api
       .fetchPosts(sort_by, order, topic, page)
       .then(({ posts, total_count }) => {
         const maxPage = Math.ceil(total_count / 10);
 
-        this.setState({ posts, isLoading: false, maxPage });
+        setPosts(posts);
+        setMaxPage(maxPage);
       })
       .catch((err) => {
-        this.setState({
-          err: { msg: err.response.data.msg, status: err.response.status },
-          isLoading: false,
-        });
+        setErr({ msg: err.response.data.msg, status: err.response.status });
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-  };
+  }, [sort_by, order, page, topic]);
 
-  handleInputChange = (event) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+
+    if (name === 'sort_by') {
+      setSort_by(value);
+    }
+    if (name === 'order') {
+      setOrder(value);
+    }
   };
 
-  handlePageChange = (direction) => {
-    this.setState(({ page }) => {
-      return {
-        page: page + direction,
-      };
-    });
+  const handlePageChange = (direction) => {
+    setPage((page) => page + direction);
   };
-}
+
+  if (err) return <ErrorDisplayer {...err} />;
+
+  return (
+    <>
+      <header className={styles.header}>
+        <h1 className={styles.title}>{`Posts: ${topic || 'All'}`}</h1>
+
+        <Sorter
+          sort_by={sort_by}
+          order={order}
+          handleInputChange={handleInputChange}
+        />
+      </header>
+
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <ul>
+            {posts.map((post) => {
+              const { post_id } = post;
+
+              return (
+                <li key={post_id}>
+                  <PostCard {...post} />
+                </li>
+              );
+            })}
+          </ul>
+
+          <Pagination
+            page={page}
+            maxPage={maxPage}
+            handlePageChange={handlePageChange}
+          />
+        </>
+      )}
+    </>
+  );
+};
 
 export default PostList;
