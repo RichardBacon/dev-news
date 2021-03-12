@@ -24,7 +24,7 @@ const PostCard = (props) => {
         <h2 className={styles.title}>{title}</h2>
       </Link>
       <div className={styles.details}>
-        <Link className={styles.link} to={`/topics/${topic}`}>
+        <Link className={styles.link} to={`/topic/${topic}`}>
           <p>🏷 {topic}</p>
         </Link>
         <p>

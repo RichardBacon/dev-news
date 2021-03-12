@@ -19,7 +19,7 @@ const AppLayout = ({ user }) => {
           <Routes>
             <PostList path="/" />
             <PostList path="/posts" />
-            <PostList path="/topics/:topic" />
+            <PostList path="/topic/:topic" />
             <TopicList path="/topics" />
             <Post path="/posts/:post_id" username={user.username} />
             <ErrorDisplayer path="*" />

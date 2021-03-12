@@ -7,7 +7,7 @@ const TopicCard = (props) => {
 
   return (
     <article className={styles.topicCard}>
-      <Link className={styles.link} to={`/topics/${title}`}>
+      <Link className={styles.link} to={`/topic/${title}`}>
         <h2 className={styles.title}>{title}</h2>
       </Link>
       <p className={styles.details}>{description}</p>

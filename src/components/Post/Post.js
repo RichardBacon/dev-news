@@ -80,7 +80,7 @@ const Post = ({ username }) => {
         <h1 className={styles.title}>{title}</h1>
 
         <div className={styles.details}>
-          <Link className={styles.link} to={`/topics/${topic}`}>
+          <Link className={styles.link} to={`/topic/${topic}`}>
             <p>🏷 {topic}</p>
           </Link>
           <p>
