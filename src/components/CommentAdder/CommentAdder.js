@@ -1,62 +1,48 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styles from './CommentAdder.module.css';
 import * as api from '../../utils/api';
 
-class CommentAdder extends Component {
-  state = {
-    body: '',
+const CommentAdder = ({ addCommentToState, post_id, username }) => {
+  const [body, setBody] = useState('');
+
+  const handleInputChange = (event) => {
+    const { value } = event.target;
+    setBody(value);
   };
 
-  render() {
-    const { body } = this.state;
-
-    return (
-      <form className={styles.commentAdder} onSubmit={this.handleSubmit}>
-        <label htmlFor="body" aria-label="body"></label>
-        <textarea
-          className={styles.commentText}
-          id="body"
-          name="body"
-          value={body}
-          onChange={this.handleInputChange}
-          required
-          placeholder="Add a comment..."
-          maxLength={255}
-        ></textarea>
-
-        <button className={styles.commentBtn} aria-label="add">
-          Submit
-        </button>
-      </form>
-    );
-  }
-
-  handleInputChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
-    this.addComment();
-
-    this.setState({
-      username: '',
-      body: '',
-    });
+    addComment();
+    setBody(body);
   };
 
-  addComment = () => {
-    const { body } = this.state;
-    const { addCommentToState, post_id, username } = this.props;
-
+  const addComment = () => {
     const newComment = { username, body };
-    console.log(post_id, newComment);
+
     api.postComment(post_id, newComment).then((comment) => {
       addCommentToState(comment);
     });
   };
-}
+
+  return (
+    <form className={styles.commentAdder} onSubmit={handleSubmit}>
+      <label htmlFor="body" aria-label="body"></label>
+      <textarea
+        className={styles.commentText}
+        id="body"
+        name="body"
+        value={body}
+        onChange={handleInputChange}
+        required
+        placeholder="Add a comment..."
+        maxLength={255}
+      ></textarea>
+
+      <button className={styles.commentBtn} aria-label="add">
+        Submit
+      </button>
+    </form>
+  );
+};
 
 export default CommentAdder;
