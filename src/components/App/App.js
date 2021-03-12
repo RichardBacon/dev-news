@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import './App.module.css';
-import PageLayout from '../PageLayout/PageLayout';
+import AppLayout from '../AppLayout/AppLayout';
 
 const App = () => {
   const user = {
@@ -20,7 +20,7 @@ const App = () => {
         />
       </Helmet>
 
-      <PageLayout user={user} />
+      <AppLayout user={user} />
     </>
   );
 };

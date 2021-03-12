@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import styles from './PageLayout.module.css';
+import styles from './AppLayout.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SideNav from '../SideNav/SideNav';
@@ -9,7 +9,7 @@ import PostList from '../PostList/PostList';
 import TopicList from '../TopicList/TopicList';
 import Post from '../Post/Post';
 
-const PageLayout = ({ user }) => {
+const AppLayout = ({ user }) => {
   return (
     <>
       <Header {...user} />
@@ -31,4 +31,4 @@ const PageLayout = ({ user }) => {
   );
 };
 
-export default PageLayout;
+export default AppLayout;
