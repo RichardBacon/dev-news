@@ -19,6 +19,14 @@ const PostList = () => {
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
 
+  const handlePageChange = (direction) => {
+    setPage((page) => page + direction);
+  };
+
+  useEffect(() => {
+    setPage(1);
+  }, [topic]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsLoading(true);
@@ -32,16 +40,15 @@ const PostList = () => {
         setMaxPage(maxPage);
       })
       .catch((err) => {
-        setErr({ msg: err.response.data.msg, status: err.response.status });
+        setErr({
+          msg: err?.response?.data?.msg,
+          status: err?.response?.status,
+        });
       })
       .finally(() => {
         setIsLoading(false);
       });
   }, [sort_by, order, page, topic]);
-
-  const handlePageChange = (direction) => {
-    setPage((page) => page + direction);
-  };
 
   if (err) return <ErrorDisplayer {...err} />;
 

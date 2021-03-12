@@ -25,8 +25,8 @@ const Post = ({ username }) => {
       })
       .catch((err) => {
         setErr({
-          msg: err.response.data.msg,
-          status: err.response.status,
+          msg: err?.response?.data?.msg,
+          status: err?.response?.status,
         });
       })
       .finally(() => {

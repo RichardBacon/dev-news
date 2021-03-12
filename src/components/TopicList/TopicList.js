@@ -20,7 +20,10 @@ const TopicList = () => {
         setTopics(topics);
       })
       .catch((err) => {
-        setErr({ msg: err.response.data.msg, status: err.response.status });
+        setErr({
+          msg: err?.response?.data?.msg,
+          status: err?.response?.status,
+        });
       })
       .finally(() => {
         setIsLoading(false);
