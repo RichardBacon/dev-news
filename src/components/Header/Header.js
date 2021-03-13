@@ -8,6 +8,9 @@ const Header = () => {
       <Link className={styles.link} to="/" aria-label="home">
         Dev News
       </Link>
+      <Link className={styles.newPost} to="/new">
+        New Post
+      </Link>
     </header>
   );
 };

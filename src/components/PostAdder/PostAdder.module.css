@@ -1,0 +1,87 @@
+.postAdder {
+  margin-top: var(--size-2);
+}
+
+.postTitle {
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-4);
+  margin-bottom: var(--size-1);
+  min-width: 100%;
+  padding: var(--size-1);
+}
+
+.postTitle:focus {
+  border: var(--border-secondary);
+}
+
+.postText {
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
+  height: 40rem;
+  margin-bottom: var(--size-0);
+  min-width: 100%;
+  padding: var(--size-1);
+  resize: none;
+}
+
+.postText:focus {
+  border: var(--border-secondary);
+}
+
+.postBtn {
+  background-color: var(--color-2-1);
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+  cursor: pointer;
+  padding: var(--size-0) var(--size-1);
+}
+
+.postBtn:hover,
+.postBtn:focus {
+  background-color: var(--color-white);
+  border: var(--border-secondary);
+  color: var(--color-2-1);
+}
+
+.selectContainer {
+  display: inline;
+  position: relative;
+}
+
+.selectContainer::after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid var(--color-1-1);
+  content: '';
+  height: 0;
+  left: 80%;
+  pointer-events: none;
+  position: absolute;
+  top: 35%;
+  width: 0;
+}
+
+.selector {
+  -webkit-appearance: none;
+  background-color: var(--color-white);
+  border: var(--border-primary);
+  border-radius: var(--border-radius);
+  color: var(--color-1-1);
+  cursor: pointer;
+  margin-bottom: var(--size-1);
+  padding: var(--size-0) var(--size-1);
+  padding-right: var(--size-3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .selector:hover {
+    border: var(--border-secondary);
+    color: var(--color-2-1);
+  }
+}
+
+.selector:invalid {
+  color: gray;
+}

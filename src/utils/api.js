@@ -5,7 +5,7 @@ const baseURL =
 
 const fetchTopics = () => {
   return axios.get(`${baseURL}/topics`).then(({ data: { topics } }) => {
-    return topics;
+    return { topics };
   });
 };
 
@@ -39,6 +39,12 @@ const patch = (id, inc_votes, type) => {
     });
 };
 
+const postPost = (newPost) => {
+  return axios.post(`${baseURL}/posts`, newPost).then(({ data: { post } }) => {
+    return post;
+  });
+};
+
 const postComment = (post_id, newComment) => {
   return axios
     .post(`${baseURL}/posts/${post_id}/comments`, newComment)
@@ -56,6 +62,7 @@ export {
   fetchPosts,
   fetchComments,
   fetchPost,
+  postPost,
   postComment,
   deleteComment,
   patch,

@@ -8,6 +8,7 @@ import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 import PostList from '../PostList/PostList';
 import TopicList from '../TopicList/TopicList';
 import Post from '../Post/Post';
+import PostAdder from '../PostAdder/PostAdder';
 
 const AppLayout = ({ user }) => {
   return (
@@ -22,6 +23,7 @@ const AppLayout = ({ user }) => {
             <PostList path="/topic/:topic" />
             <TopicList path="/topics" />
             <Post path="/posts/:post_id" username={user.username} />
+            <PostAdder path="/new" username={user.username} />
             <ErrorDisplayer path="*" />
           </Routes>
         </main>
