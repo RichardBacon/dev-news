@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import * as api from '../../utils/api';
 import styles from './Post.module.css';
@@ -14,25 +14,17 @@ const Post = ({ username }) => {
   const [post, setPost] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsLoading(true);
-
-    api
-      .fetchPost(post_id)
-      .then((post) => {
-        setPost(post);
-      })
-      .catch((err) => {
-        setErr({
-          msg: err?.response?.data?.msg,
-          status: err?.response?.status,
-        });
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, [post_id]);
+  const {
+    topic,
+    title,
+    created_by,
+    body,
+    created_at,
+    votes,
+    comment_count,
+  } = post;
 
   const updateCommentCount = (increment) => {
     setPost((post) => {
@@ -55,17 +47,40 @@ const Post = ({ username }) => {
     });
   };
 
-  if (err) return <ErrorDisplayer {...err} />;
+  const handleDelete = () => {
+    api
+      .deletePost(post_id)
+      .then(({ post_id }) => {
+        navigate(`/`);
+      })
+      .catch((err) => {
+        setErr({
+          msg: err?.response?.data?.msg,
+          status: err?.response?.status,
+        });
+      });
+  };
 
-  const {
-    topic,
-    title,
-    created_by,
-    body,
-    created_at,
-    votes,
-    comment_count,
-  } = post;
+  useEffect(() => {
+    setIsLoading(true);
+
+    api
+      .fetchPost(post_id)
+      .then((post) => {
+        setPost(post);
+      })
+      .catch((err) => {
+        setErr({
+          msg: err?.response?.data?.msg,
+          status: err?.response?.status,
+        });
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [post_id]);
+
+  if (err) return <ErrorDisplayer {...err} />;
 
   return isLoading ? (
     <Loader />
@@ -91,8 +106,19 @@ const Post = ({ username }) => {
           <p>{`👍 ${votes} like${Number(votes) === 1 ? '' : 's'}`}</p>
         </div>
 
-        <p>{body}</p>
-        <LikeUpdater updateLikeCount={updateLikeCount} post_id={post_id} />
+        <p className={styles.body}>{body}</p>
+        <div className={styles.buttons}>
+          <LikeUpdater updateLikeCount={updateLikeCount} post_id={post_id} />
+          {username === created_by && (
+            <button
+              className={styles.deleteBtn}
+              onClick={handleDelete}
+              aria-label="delete"
+            >
+              Delete
+            </button>
+          )}
+        </div>
       </article>
 
       <CommentList

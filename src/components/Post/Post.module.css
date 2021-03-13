@@ -36,3 +36,30 @@
   color: var(--color-1-2);
   margin-bottom: var(--size-1);
 }
+
+.body {
+  margin-bottom: var(--size-2);
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteBtn {
+  background-color: var(--color-danger);
+  border: var(--border-danger);
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+  cursor: pointer;
+  height: var(--size-3);
+  padding: var(--size-0) var(--size-1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .deleteBtn:hover {
+    background-color: var(--color-white);
+    color: var(--color-danger);
+  }
+}

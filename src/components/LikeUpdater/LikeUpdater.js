@@ -38,18 +38,16 @@ const LikeUpdater = ({ post_id, comment_id, updateLikeCount }) => {
 
   return (
     <>
-      <div className={styles.btns}>
-        <button
-          className={styles.btn}
-          onClick={() => handleLikeUpdate()}
-          aria-label="like"
-        >
-          <FontAwesomeIcon
-            className={styles.icon}
-            icon={userLiked ? ['fas', 'heart'] : ['far', 'heart']}
-          />
-        </button>
-      </div>
+      <button
+        className={styles.btn}
+        onClick={() => handleLikeUpdate()}
+        aria-label="like"
+      >
+        <FontAwesomeIcon
+          className={styles.icon}
+          icon={userLiked ? ['fas', 'heart'] : ['far', 'heart']}
+        />
+      </button>
     </>
   );
 };

@@ -57,6 +57,10 @@ const deleteComment = (comment_id) => {
   return axios.delete(`${baseURL}/comments/${comment_id}`);
 };
 
+const deletePost = (post_id) => {
+  return axios.delete(`${baseURL}/posts/${post_id}`);
+};
+
 export {
   fetchTopics,
   fetchPosts,
@@ -65,5 +69,6 @@ export {
   postPost,
   postComment,
   deleteComment,
+  deletePost,
   patch,
 };
