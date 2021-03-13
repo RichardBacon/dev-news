@@ -16,7 +16,7 @@ const TopicList = () => {
 
     api
       .fetchTopics()
-      .then((topics) => {
+      .then(({ topics }) => {
         setTopics(topics);
       })
       .catch((err) => {
