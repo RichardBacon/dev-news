@@ -23,11 +23,19 @@
   text-decoration: none;
 }
 
+.userSection {
+  align-items: center;
+  display: flex;
+}
+
 .newPost {
   background-color: var(--color-2-1);
   border: var(--border-primary);
   border-radius: var(--border-radius);
   color: var(--color-white);
+  display: block;
+  height: var(--size-3);
+  margin-right: var(--size-2);
   padding: var(--size-0) var(--size-1);
   text-decoration: none;
 }

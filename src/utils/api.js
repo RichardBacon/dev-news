@@ -3,6 +3,12 @@ import axios from 'axios';
 const baseURL =
   process.env.REACT_APP_BASE_URL || 'https://dev-news-api.herokuapp.com/api';
 
+const fetchUsers = () => {
+  return axios.get(`${baseURL}/users`).then(({ data: { users } }) => {
+    return { users };
+  });
+};
+
 const fetchTopics = () => {
   return axios.get(`${baseURL}/topics`).then(({ data: { topics } }) => {
     return { topics };
@@ -62,6 +68,7 @@ const deletePost = (post_id) => {
 };
 
 export {
+  fetchUsers,
   fetchTopics,
   fetchPosts,
   fetchComments,

@@ -10,10 +10,10 @@ import TopicList from '../TopicList/TopicList';
 import Post from '../Post/Post';
 import PostAdder from '../PostAdder/PostAdder';
 
-const AppLayout = ({ user }) => {
+const AppLayout = ({ username, setUsername }) => {
   return (
     <>
-      <Header {...user} />
+      <Header setUsername={setUsername} />
       <div className={styles.container}>
         <SideNav className={styles.SideNav} />
         <main>
@@ -22,8 +22,8 @@ const AppLayout = ({ user }) => {
             <PostList path="/posts" />
             <PostList path="/topic/:topic" />
             <TopicList path="/topics" />
-            <Post path="/posts/:post_id" username={user.username} />
-            <PostAdder path="/new" username={user.username} />
+            <Post path="/posts/:post_id" username={username} />
+            <PostAdder path="/new" username={username} />
             <ErrorDisplayer path="*" />
           </Routes>
         </main>

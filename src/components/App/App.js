@@ -2,11 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import './App.module.css';
 import AppLayout from '../AppLayout/AppLayout';
+import useInputState from '../../hooks/useInputState';
 
 const App = () => {
-  const user = {
-    username: 'username1',
-  };
+  const [username, setUsername] = useInputState('username1');
+
+  console.log(username);
 
   return (
     <>
@@ -20,7 +21,7 @@ const App = () => {
         />
       </Helmet>
 
-      <AppLayout user={user} />
+      <AppLayout setUsername={setUsername} username={username} />
     </>
   );
 };
