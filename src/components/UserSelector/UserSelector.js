@@ -20,7 +20,11 @@ const UserSelector = ({ setUsername }) => {
           name="username"
           id="username"
           onChange={setUsername}
+          required
         >
+          <option className={styles.option} value="">
+            User...
+          </option>
           {users.map((user) => (
             <option key={user.username} value={user.username}>
               {user.username}

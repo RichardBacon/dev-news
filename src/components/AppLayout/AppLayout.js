@@ -13,7 +13,7 @@ import PostAdder from '../PostAdder/PostAdder';
 const AppLayout = ({ username, setUsername }) => {
   return (
     <>
-      <Header setUsername={setUsername} />
+      <Header username={username} setUsername={setUsername} />
       <div className={styles.container}>
         <SideNav className={styles.SideNav} />
         <main>

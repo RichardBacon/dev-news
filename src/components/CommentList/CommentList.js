@@ -54,11 +54,13 @@ const CommentList = ({ post_id, username, updateCommentCount }) => {
         <h2 className={styles.title}>Comments</h2>
       </header>
 
-      <CommentAdder
-        post_id={post_id}
-        username={username}
-        addCommentToState={addCommentToState}
-      />
+      {username && (
+        <CommentAdder
+          post_id={post_id}
+          username={username}
+          addCommentToState={addCommentToState}
+        />
+      )}
 
       {isLoading ? (
         <Loader />

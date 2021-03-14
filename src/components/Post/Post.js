@@ -108,7 +108,9 @@ const Post = ({ username }) => {
 
         <p className={styles.body}>{body}</p>
         <div className={styles.buttons}>
-          <LikeUpdater updateLikeCount={updateLikeCount} post_id={post_id} />
+          {username && (
+            <LikeUpdater updateLikeCount={updateLikeCount} post_id={post_id} />
+          )}
           {username === created_by && (
             <button
               className={styles.deleteBtn}

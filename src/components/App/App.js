@@ -5,9 +5,7 @@ import AppLayout from '../AppLayout/AppLayout';
 import useInputState from '../../hooks/useInputState';
 
 const App = () => {
-  const [username, setUsername] = useInputState('username1');
-
-  console.log(username);
+  const [username, setUsername] = useInputState('');
 
   return (
     <>
