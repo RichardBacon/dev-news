@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import * as api from '../../utils/api';
 import styles from './Post.module.css';
-import { Link } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
 import CommentList from '../CommentList/CommentList';
 import Loader from '../Loader/Loader';
 import LikeUpdater from '../LikeUpdater/LikeUpdater';
 import ErrorDisplayer from '../ErrorDisplayer/ErrorDisplayer';
 
-const Post = ({ username }) => {
+const Post = () => {
+  const { username } = useContext(UserContext);
   const { post_id } = useParams();
   const [post, setPost] = useState({});
   const [isLoading, setIsLoading] = useState(true);

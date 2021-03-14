@@ -1,9 +1,12 @@
-import React from 'react';
-import styles from './Header.module.css';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
+import { UserContext } from '../../contexts/UserContext';
 import UserSelector from '../UserSelector/UserSelector';
 
-const Header = ({ username, setUsername }) => {
+const Header = () => {
+  const { username } = useContext(UserContext);
+
   return (
     <header className={styles.header}>
       <Link className={styles.link} to="/" aria-label="home">
@@ -15,7 +18,7 @@ const Header = ({ username, setUsername }) => {
             New Post
           </Link>
         )}
-        <UserSelector setUsername={setUsername} />
+        <UserSelector />
       </div>
     </header>
   );

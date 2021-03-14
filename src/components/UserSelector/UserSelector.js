@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import * as api from '../../utils/api';
 import styles from './UserSelector.module.css';
+import { UserContext } from '../../contexts/UserContext';
 
-const UserSelector = ({ setUsername }) => {
+const UserSelector = () => {
   const [users, setUsers] = useState([]);
+  const { changeUsername } = useContext(UserContext);
 
   useEffect(() => {
     api.fetchUsers().then(({ users }) => {
@@ -19,7 +21,7 @@ const UserSelector = ({ setUsername }) => {
           disabled={!users.length}
           name="username"
           id="username"
-          onChange={setUsername}
+          onChange={changeUsername}
           required
         >
           <option className={styles.option} value="">
