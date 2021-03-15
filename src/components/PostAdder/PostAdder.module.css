@@ -11,10 +11,6 @@
   padding: var(--size-1);
 }
 
-.postTitle:focus {
-  border: var(--border-secondary);
-}
-
 .postText {
   border: var(--border-primary);
   border-radius: var(--border-radius);
@@ -23,10 +19,6 @@
   min-width: 100%;
   padding: var(--size-1);
   resize: none;
-}
-
-.postText:focus {
-  border: var(--border-secondary);
 }
 
 .postBtn {
@@ -38,11 +30,12 @@
   padding: var(--size-0) var(--size-1);
 }
 
-.postBtn:hover,
-.postBtn:focus {
-  background-color: var(--color-white);
-  border: var(--border-secondary);
-  color: var(--color-2-1);
+@media (hover: hover) and (pointer: fine) {
+  .postBtn:hover {
+    background-color: var(--color-white);
+    border: var(--border-secondary);
+    color: var(--color-2-1);
+  }
 }
 
 .selectContainer {

@@ -12,10 +12,6 @@
   resize: none;
 }
 
-.commentText:focus {
-  border: var(--border-secondary);
-}
-
 .commentBtn {
   background-color: var(--color-2-1);
   border: var(--border-primary);
@@ -26,9 +22,10 @@
   padding: var(--size-0) var(--size-1);
 }
 
-.commentBtn:hover,
-.commentBtn:focus {
-  background-color: var(--color-white);
-  border: var(--border-secondary);
-  color: var(--color-2-1);
+@media (hover: hover) and (pointer: fine) {
+  .commentBtn:hover {
+    background-color: var(--color-white);
+    border: var(--border-secondary);
+    color: var(--color-2-1);
+  }
 }

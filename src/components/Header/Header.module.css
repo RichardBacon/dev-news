@@ -40,9 +40,10 @@
   text-decoration: none;
 }
 
-.newPost:hover,
-.newPost:focus {
-  background-color: var(--color-white);
-  border: var(--border-secondary);
-  color: var(--color-2-1);
+@media (hover: hover) and (pointer: fine) {
+  .newPost:hover {
+    background-color: var(--color-white);
+    border: var(--border-secondary);
+    color: var(--color-2-1);
+  }
 }
