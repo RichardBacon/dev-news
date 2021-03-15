@@ -104,7 +104,7 @@ const Post = () => {
               Number(comment_count) === 1 ? '' : 's'
             }`}
           </p>
-          <p>{`👍 ${likes} like${Number(likes) === 1 ? '' : 's'}`}</p>
+          <p>{`❤️ ${likes} like${Number(likes) === 1 ? '' : 's'}`}</p>
         </div>
 
         <p className={styles.body}>{body}</p>

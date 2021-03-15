@@ -32,7 +32,7 @@ const PostCard = (props) => {
             Number(comment_count) === 1 ? '' : 's'
           }`}
         </p>
-        <p>{`👍 ${likes} like${Number(likes) === 1 ? '' : 's'}`}</p>
+        <p>{`❤️ ${likes} like${Number(likes) === 1 ? '' : 's'}`}</p>
       </div>
     </article>
   );
