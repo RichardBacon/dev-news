@@ -37,9 +37,9 @@ const fetchPost = (post_id) => {
   });
 };
 
-const patch = (id, inc_votes, type) => {
+const patch = (id, inc_likes, type) => {
   return axios
-    .patch(`${baseURL}/${type}s/${id}`, { inc_votes })
+    .patch(`${baseURL}/${type}s/${id}`, { inc_likes })
     .then(({ data }) => {
       return data[type];
     });

@@ -10,7 +10,7 @@ const PostCard = (props) => {
     title,
     created_by,
     created_at,
-    votes,
+    likes,
     comment_count,
   } = props;
 
@@ -32,7 +32,7 @@ const PostCard = (props) => {
             Number(comment_count) === 1 ? '' : 's'
           }`}
         </p>
-        <p>{`👍 ${votes} like${Number(votes) === 1 ? '' : 's'}`}</p>
+        <p>{`👍 ${likes} like${Number(likes) === 1 ? '' : 's'}`}</p>
       </div>
     </article>
   );

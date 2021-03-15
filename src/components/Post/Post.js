@@ -23,7 +23,7 @@ const Post = () => {
     created_by,
     body,
     created_at,
-    votes,
+    likes,
     comment_count,
   } = post;
 
@@ -41,8 +41,8 @@ const Post = () => {
   const updateLikeCount = (increment) => {
     setPost((post) => {
       const updatedPost = { ...post };
-      const updatedLikeCount = parseInt(updatedPost.votes) + increment;
-      updatedPost.votes = updatedLikeCount;
+      const updatedLikeCount = parseInt(updatedPost.likes) + increment;
+      updatedPost.likes = updatedLikeCount;
 
       return updatedPost;
     });
@@ -104,7 +104,7 @@ const Post = () => {
               Number(comment_count) === 1 ? '' : 's'
             }`}
           </p>
-          <p>{`👍 ${votes} like${Number(votes) === 1 ? '' : 's'}`}</p>
+          <p>{`👍 ${likes} like${Number(likes) === 1 ? '' : 's'}`}</p>
         </div>
 
         <p className={styles.body}>{body}</p>
