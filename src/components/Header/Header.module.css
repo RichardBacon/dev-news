@@ -3,6 +3,8 @@
   background-color: var(--color-white);
   border-bottom: var(--border-primary);
   display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-2);
   justify-content: space-between;
   min-height: var(--header-height);
   padding: var(--size-1) calc(((100% - var(--max-width)) / 2) + var(--size-1));
@@ -26,6 +28,7 @@
 .userSection {
   align-items: center;
   display: flex;
+  gap: var(--size-2);
 }
 
 .newPost {
@@ -34,8 +37,6 @@
   border-radius: var(--border-radius);
   color: var(--color-white);
   display: block;
-  height: var(--size-3);
-  margin-right: var(--size-2);
   padding: var(--size-0) var(--size-1);
   text-decoration: none;
 }
