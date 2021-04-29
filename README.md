@@ -14,39 +14,81 @@ A mock news and discussion site for developers, inspired by [Reddit](https://www
 
 ### Logging in and out
 
-By default the user is logged out and can use the app in a limited, read-only manner.
+To 'log in' select a user from the dropdown menu in the header.
 
-The dropdown menu in the header can be used to select a user to 'log in' as, actions performed in the app will then be attributed to that user.
-
-To 'log out' the default option an be selected from the dropdown menu.
+To 'log out' select the default option from the dropdown menu.
 
 ### Viewing posts
 
-The default starting view for the app is a list of all posts. These can be sorted by date posted, number of comments, and number of likes, in descending or ascending order.
+The default view shows a list of all posts. To return to the default view at any time click 'Home' in the navigation.
 
-The default view can be returned to at any time by clicking the Home link in the side navigation.
+Posts can be sorted by date posted, number of comments, and number of likes, in descending or ascending order using the dropdown menus.
 
-By clicking on a particular topic from anywhere in the app the user will be taken to a view that lists posts just for that topic.
+To view a list of posts filtered by a particular topic click the name of a topic in the navigation or within a post.
 
-The user is able to click a post title in the list to view an individual post and any additional comments for that post.
-
-### Adding comments and likes
-
-Each post has a form from which users can add comments to the post, and there is a button to 'like' a post.
+To view an individual post click on the title of the post in the list.
 
 ### Adding posts
 
-The user can add a post at any time by clicking the new post button in the header.
+To add a new post click the 'New Post' button in the header. Enter a title and body text for the post and select a topic from the dropdown menu before clicking 'Submit'.
 
-A title and body text for the post can be entered, and a topic selected.
+### Adding comments and likes
 
-### Deleting comments, likes and posts
+To add a comment to a post enter the comment text and click 'Submit'.
 
-Users are able to delete their own posts and comments by using a delete button, and can 'unlike' a post by clicking the like button a second time.
+To like a post click the heart icon.
+
+### Deleting comments and posts
+
+To delete a post or comment, view an individual post and click the 'Delete' button associated with the post or comment to be deleted.
 
 ### Viewing topics
 
-The side navigation contains a link that can be used to view a list of all topics and their descriptions. This also provides a way to view all posts in a topic by clicking on the topic title.
+To view a list of all topics click 'Topics' in the navigation.
+
+## Development
+
+### Technical Features
+
+- A frontend user interface built with Create React App.
+
+- Fetching, posting and patching data to an API using Axios.
+
+- Error handling.
+
+- Loading spinner.
+
+- Pagination.
+
+#### Dev Tools
+
+- Code formatting with Prettier.
+
+- Linting with ESLint and StyleLint.
+
+#### React
+
+- Use of functional components and React Hooks.
+
+- Use of React context to make user data available without having to pass it through the component tree as props.
+
+- Routing using React Router.
+
+#### Markup
+
+- Semantic HTML.
+
+- HTML Head meta data using React Helmet.
+
+#### Styling
+
+- CSS Modules.
+
+- CSS custom variables.
+
+- Responsive design using media queries.
+
+- Hover effects using media features.
 
 ## Getting Started
 
